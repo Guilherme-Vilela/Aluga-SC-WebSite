@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('../public/layout');
+    return view('Site.index');
 });
 
-Route::get('/listing', function () {
-    return view('listing');
-});

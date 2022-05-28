@@ -4,7 +4,7 @@
         <div class="col-lg-4">
           <div class="about">
             <div class="logo">
-              <img src="assets/images/black-logo.png" alt="">
+              <img src="{{asset("images/black-logo.png")}}" alt="">
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adicingi elit, sed do eiusmod tempor incididunt ut et dolore magna aliqua.</p>
           </div>

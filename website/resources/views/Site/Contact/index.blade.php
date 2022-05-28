@@ -1,3 +1,5 @@
+@extends('Site.Default.layout')
+@section('content')
   <div class="page-heading">
     <div class="container">
       <div class="row">

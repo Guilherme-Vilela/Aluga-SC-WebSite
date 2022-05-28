@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Site.index');
+// Route::get('/', function () {
+//     return view('Site.index');
+// });
+Route::namespace('\App\Http\Controllers\Site')->group( function() {
+    Route::get('/','HomeController@index');
+    Route::get('/{slug}','HomeController@show');
 });

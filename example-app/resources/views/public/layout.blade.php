@@ -26,7 +26,7 @@
 <body>
 
 @include('/public/header')
-@include('contact')
+@include('index')
 @include('/public/footer')
 
 </body>

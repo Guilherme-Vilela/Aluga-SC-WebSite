@@ -34,3 +34,12 @@ font-weight: bold;
 .dropdown_sub_title_people{
     font-size: 11px;
 }
+.images_dropdown_where{
+    flex-wrap: wrap;
+}
+@media (max-width: 800px)
+{
+    .images_dropdown_where{
+        flex-wrap: nowrap;
+    }
+}

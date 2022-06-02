@@ -84,41 +84,39 @@
                             placeholder=" Quantas pessoas?" />
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu-where"
                             style="width: 275px;">
-                            <div>
-                                <div class="d-flex">
-                                    <div class=" col-sm-6">
-                                        <p class="dropdown_title_people">Adultos</p>
-                                        <p class="dropdown_sub_title_people">12 anos ou mais</p>
-                                    </div>
-                                    <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                        <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
-                                        <p>0</p>
-                                        <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
-                                    </div>
+                            <div class="d-flex">
+                                <div class=" col-sm-6">
+                                    <p class="dropdown_title_people">Adultos</p>
+                                    <p class="dropdown_sub_title_people">12 anos ou mais</p>
                                 </div>
-                                <div class="dropdown-divider"></div>
-                                <div class="d-flex">
-                                    <div class=" col-sm-6">
-                                        <p class="dropdown_title_people">Crianças</p>
-                                        <p class="dropdown_sub_title_people">De 2 até 12 anos </p>
-                                    </div>
-                                    <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                        <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
-                                        <p>0</p>
-                                        <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
-                                    </div>
+                                <div class="d-flex col-sm-6 justify-content-center align-items-center">
+                                    <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
+                                    <p>0</p>
+                                    <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
                                 </div>
-                                <div class="dropdown-divider"></div>
-                                <div class="d-flex">
-                                    <div class=" col-sm-6">
-                                        <p class="dropdown_title_people">Pets</p>
-                                        <p class="dropdown_sub_title_people"></p>
-                                    </div>
-                                    <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                        <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
-                                        <p>0</p>
-                                        <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
-                                    </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="d-flex">
+                                <div class=" col-sm-6">
+                                    <p class="dropdown_title_people">Crianças</p>
+                                    <p class="dropdown_sub_title_people">De 2 até 12 anos </p>
+                                </div>
+                                <div class="d-flex col-sm-6 justify-content-center align-items-center">
+                                    <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
+                                    <p>0</p>
+                                    <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="d-flex">
+                                <div class=" col-sm-6">
+                                    <p class="dropdown_title_people">Pets</p>
+                                    <p class="dropdown_sub_title_people"></p>
+                                </div>
+                                <div class="d-flex col-sm-6 justify-content-center align-items-center">
+                                    <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
+                                    <p>0</p>
+                                    <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
                                 </div>
                             </div>
                     </li>
@@ -129,8 +127,26 @@
                         </button>
                     </li>
                 </ul>
-                <div class="col-sm-2 d-flex justify-content-center d-none d-lg-block">
-                    <i class="fa-solid fa-user d-none d-lg-block"></i>
+                <div class="col-sm-2 d-flex justify-content-center d-none d-lg-block dropdown">
+                    <div class="d-flex d-none d-lg-block border_radius text-center align-items-center"
+                        style="width: 30%;height: 40px;" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false ">
+                        <i class="fa-solid fa-bars fa-lg" style="margin-top: 17px;"></i>
+                        <i class="fa-solid fa-circle-user fa-xl"></i>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-config" aria-labelledby="navbarDropdown">
+                        <div class=" images_dropdown_where" >
+                            <a class="dropdown_title_config dropdown-item ">   Cadastrar-se</a> 
+                            <a class="dropdown_title_config dropdown-item">   Efetue login</a>
+                            <div class="dropdown-divider"></div>
+
+                            <a class="dropdown_title_config dropdown-item">   Duvidas frequentes</a>
+                            <a class="dropdown_title_config dropdown-item">   Ajuda</a>   
+                            <div class="dropdown-divider"></div>
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>

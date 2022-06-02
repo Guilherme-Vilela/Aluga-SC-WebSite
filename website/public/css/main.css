@@ -43,3 +43,8 @@ font-weight: bold;
         flex-wrap: nowrap;
     }
 }
+.dropdown_title_config{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}

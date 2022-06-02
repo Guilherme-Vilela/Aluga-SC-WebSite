@@ -14,3 +14,23 @@
     transition: all 0.5s ease;
     transform: scale(1,1);
 }
+p{
+    margin: 0px;
+    padding: 0px;
+}
+.icon_people{
+   margin: 0px 10px;
+   transition: all 0.3s;
+}
+.icon_people:hover{
+    transition: all 0.3s;
+    font-size: 1.65em !important;
+    cursor: pointer;
+ }
+.dropdown_title_people{
+font-size: 15px;
+font-weight: bold;
+}
+.dropdown_sub_title_people{
+    font-size: 11px;
+}

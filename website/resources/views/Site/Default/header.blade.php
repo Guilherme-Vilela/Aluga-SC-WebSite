@@ -129,7 +129,7 @@
                 </ul>
                 <div class="col-sm-2 d-flex justify-content-center d-none d-lg-block dropdown">
                     <div class="d-flex d-none d-lg-block border_radius text-center align-items-center"
-                        style="width: 30%;height: 40px;" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        style="width: 70px;height: 40px;" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false ">
                         <i class="fa-solid fa-bars fa-lg" style="margin-top: 17px;"></i>
                         <i class="fa-solid fa-circle-user fa-xl"></i>
@@ -143,8 +143,6 @@
                             <a class="dropdown_title_config dropdown-item">   Duvidas frequentes</a>
                             <a class="dropdown_title_config dropdown-item">   Ajuda</a>   
                             <div class="dropdown-divider"></div>
-
-
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,16 @@
+.border_radius{
+    border-radius:30px;
+    border: solid 2px black;
+    box-shadow: 1px 1px 1px #ccc;
+}
+.button_header{
+    margin: 10px;
+}
+.size_animate:hover{
+    transition: all 0.5s ease;
+    transform: scale(1.1,1.1);
+}
+.size_animate{
+    transition: all 0.5s ease;
+    transform: scale(1,1);
+}

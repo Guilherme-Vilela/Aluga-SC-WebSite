@@ -1,0 +1,50 @@
+.border_radius{
+    border-radius:30px;
+    border: solid 2px black;
+    box-shadow: 1px 1px 1px #ccc;
+}
+.button_header{
+    margin: 10px;
+}
+.size_animate:hover{
+    transition: all 0.5s ease;
+    transform: scale(1.1,1.1);
+}
+.size_animate{
+    transition: all 0.5s ease;
+    transform: scale(1,1);
+}
+p{
+    margin: 0px;
+    padding: 0px;
+}
+.icon_people{
+   margin: 0px 10px;
+   transition: all 0.3s;
+}
+.icon_people:hover{
+    transition: all 0.3s;
+    font-size: 1.65em !important;
+    cursor: pointer;
+ }
+.dropdown_title_people{
+font-size: 15px;
+font-weight: bold;
+}
+.dropdown_sub_title_people{
+    font-size: 11px;
+}
+.images_dropdown_where{
+    flex-wrap: wrap;
+}
+@media (max-width: 800px)
+{
+    .images_dropdown_where{
+        flex-wrap: nowrap;
+    }
+}
+.dropdown_title_config{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}

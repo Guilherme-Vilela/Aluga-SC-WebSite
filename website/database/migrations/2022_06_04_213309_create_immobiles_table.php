@@ -13,17 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('endereco_imovel', function (Blueprint $table) {
+        Schema::create('immobiles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer("numero");
-            $table->String("rua",45);
-            $table->String("bairro",45); 
-            $table->String("cidade",45); 
-            $table->String("estado",45); 
-            $table->String("CEP",10);
-            $table->String("complemento",100);
-            $table->integer("imovel");
+            $table->String("name");
+            $table->integer("capacity");
+            $table->String("status");
+            $table->text("description");
+            $table->double("value");
+            $table->String("image");
         });
     }
 
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('endereco_imovel');
+        Schema::dropIfExists('immobiles');
     }
 };

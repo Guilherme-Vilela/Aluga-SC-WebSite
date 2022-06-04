@@ -13,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comodo', function (Blueprint $table) {
+        Schema::create('schedules', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->String("nome");
+            $table->date("check_in");
+            $table->date("check_out");
+            $table->String("status");
+            $table->String("comment");
+            $table->integer("note");
         });
     }
 
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comodo');
+        Schema::dropIfExists('schedules');
     }
 };

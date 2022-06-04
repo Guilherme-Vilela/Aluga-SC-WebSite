@@ -13,17 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usuario_endereco', function (Blueprint $table) {
+        Schema::create('immobile_adresses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer("numero");
-            $table->String("rua",45);
-            $table->String("bairro",45); 
-            $table->String("cidade",45); 
-            $table->String("estado",45); 
+            $table->integer("number");
+            $table->String("road",45);
+            $table->String("district",45); 
+            $table->String("city",45); 
+            $table->String("state",45); 
             $table->String("CEP",10);
-            $table->String("complemento",100);
-            $table->integer("usuario");
+            $table->String("complement",100);
         });
     }
 
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario_endereco');
+        Schema::dropIfExists('immobile_adresses');
     }
 };

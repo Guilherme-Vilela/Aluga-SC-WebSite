@@ -13,17 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('agenda', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->date("data_entrada");
-            $table->date("data_saida");
-            $table->String("status");
-            $table->integer("usuario");
-            $table->integer("pagamento");
-            $table->integer("imovel");
-            $table->String("comentario");
-            $table->integer("nota");
+            $table->String('name');
         });
     }
 
@@ -34,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agenda');
+        Schema::dropIfExists('rooms');
     }
 };

@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comodo_imovel', function (Blueprint $table) {
+        Schema::create('furniture', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer("comodo");
-            $table->integer("imovel");
+            $table->String('name');
+            $table->integer('capacity');
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comodo_imovel');
+        Schema::dropIfExists('furniture');
     }
 };

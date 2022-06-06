@@ -16,6 +16,7 @@ class UserAdress extends Model
         'state',
         'CEP',
         'complement',
+        'user_id',
     ];
     public function user(){
         return $this->belongsTo(User::class);

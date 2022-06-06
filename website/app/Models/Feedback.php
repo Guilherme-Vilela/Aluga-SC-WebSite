@@ -12,6 +12,7 @@ class Feedback extends Model
     protected $fillable = [
         'comment',
         'note',
+        'user_id'
     ];
     public function user(){return $this->belongsTo(User::class);}
 }

@@ -12,6 +12,9 @@ class Schedule extends Model
         'check_in',
         'check_out',
         'status',
+        'user_id',
+        'immobile_id', 
+        'payment_id',
     ];
     protected $dates = [
         'check_in',

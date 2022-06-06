@@ -9,8 +9,10 @@ class RoomFurniture extends Model
 {
     use HasFactory;
 
-
-
+    protected $fillable = [
+        'room_id',
+        'furtinure_id',
+    ];
     public function furniture()
     {
         return $this->belongsTo(Furniture::class);

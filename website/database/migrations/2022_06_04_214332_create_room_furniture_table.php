@@ -13,17 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('endereco_imovel', function (Blueprint $table) {
+        Schema::create('room_furniture', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('room_id')->references('id')->on('rooms');
+            $table->foreignId('furniture_id')->references('id')->on('furniture');
             $table->timestamps();
-            $table->integer("numero");
-            $table->String("rua",45);
-            $table->String("bairro",45); 
-            $table->String("cidade",45); 
-            $table->String("estado",45); 
-            $table->String("CEP",10);
-            $table->String("complemento",100);
-            $table->integer("imovel");
+           
         });
     }
 
@@ -34,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('endereco_imovel');
+        Schema::dropIfExists('room_furniture');
     }
 };

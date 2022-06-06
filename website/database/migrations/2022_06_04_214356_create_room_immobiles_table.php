@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comodo_imovel', function (Blueprint $table) {
+        Schema::create('room_immobiles', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('room_id')->references('id')->on('rooms');
+            $table->foreignId('immobile_id')->references('id')->on('immobiles');
             $table->timestamps();
-            $table->integer("comodo");
-            $table->integer("imovel");
+         
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comodo_imovel');
+        Schema::dropIfExists('room_immobiles');
     }
 };

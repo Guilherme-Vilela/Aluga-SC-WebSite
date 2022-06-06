@@ -13,13 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('avaliacao', function (Blueprint $table) {
+        Schema::create('immobiles', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->String("name");
+            $table->integer("capacity");
+            $table->String("status");
+            $table->text("description");
+            $table->double("value");
+            $table->String("image");
             $table->timestamps();
-            $table->integer("usuario");
-            $table->String("comentario");
-            $table->date("data");
-            $table->integer("nota");
         });
     }
 
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('avaliacao');
+        Schema::dropIfExists('immobiles');
     }
 };

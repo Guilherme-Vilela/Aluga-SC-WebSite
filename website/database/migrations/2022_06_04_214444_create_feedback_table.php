@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comodo', function (Blueprint $table) {
+        Schema::create('feedback', function (Blueprint $table) {
             $table->id();
+            $table->string("comment");
+            $table->integer("note");
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
-            $table->String("nome");
         });
     }
 
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comodo');
+        Schema::dropIfExists('feedback');
     }
 };

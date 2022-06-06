@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comodo_mobilia', function (Blueprint $table) {
+        Schema::create('furniture', function (Blueprint $table) {
             $table->id();
+            $table->String('name');
+            $table->integer('capacity');
             $table->timestamps();
-            $table->integer("comodo");
-            $table->integer("mobilia");
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comodo_mobilia');
+        Schema::dropIfExists('furniture');
     }
 };

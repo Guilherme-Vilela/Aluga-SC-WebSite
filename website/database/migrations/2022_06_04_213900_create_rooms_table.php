@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('imovel', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
+            $table->String('name');
             $table->timestamps();
-            $table->String("nome");
-            $table->integer("capacidade");
-            $table->String("status");
-            $table->text("descricao");
-            $table->double("valor");
-            $table->String("caminho_imagem");
-            $table->integer("usuario");
         });
     }
 
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imovel');
+        Schema::dropIfExists('rooms');
     }
 };

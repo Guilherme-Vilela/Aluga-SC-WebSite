@@ -11,4 +11,12 @@ class Room extends Model
     protected $fillable = [
         'name',
     ];
+    public function roomFurniture()
+    {
+        return $this->hasMany(RoomFurniture::class);
+    }
+    public function roomImmobile()
+    {
+        return $this->hasMany(RoomImmobile::class);
+    }
 }

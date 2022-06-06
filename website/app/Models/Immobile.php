@@ -16,4 +16,9 @@ class Immobile extends Model
         "value",
         "image",
     ];
+    public function user()              {return $this->belongsTo(User::class);}
+    public function immobileAdress()    {return $this->hasMany(ImmobileAdress::class);}
+    public function roomImmobile()      {return $this->hasMany(RoomImmobile::class);}
+    public function schedule()          {return $this->hasMany(Schedule::class);}
+    
 }

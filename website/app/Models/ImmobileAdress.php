@@ -17,4 +17,5 @@ class ImmobileAdress extends Model
         'CEP',
         'complement',
     ];
+    public function immobile(){return $this->belongsTo(Immobile::class);}
 }

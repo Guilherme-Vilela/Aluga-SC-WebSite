@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->String("method",45);
             $table->String("status");
             $table->String("payment_id",45);
@@ -27,6 +26,7 @@ return new class extends Migration
             $table->String("session",45);
             $table->String("customer_id",45);
             $table->ipAddress("ip");
+            $table->timestamps();
         });
     }
 

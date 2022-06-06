@@ -12,4 +12,7 @@ class Furniture extends Model
         'name',
         'capacity',
     ];
+
+    public function roomFurniture(){return $this->hasMany(RoomFurniture::class);}
+    
 }

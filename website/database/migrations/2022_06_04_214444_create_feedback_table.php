@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string("comment");
             $table->integer("note");
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 

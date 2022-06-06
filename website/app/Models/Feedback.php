@@ -13,4 +13,5 @@ class Feedback extends Model
         'comment',
         'note',
     ];
+    public function user(){return $this->belongsTo(User::class);}
 }

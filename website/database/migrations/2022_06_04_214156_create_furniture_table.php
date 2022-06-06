@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('furniture', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->String('name');
             $table->integer('capacity');
+            $table->timestamps();
         });
     }
 

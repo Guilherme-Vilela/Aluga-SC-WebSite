@@ -16,4 +16,5 @@ class Payment extends Model
         'ip',
 
     ];
+    public function schedule(){return $this->hasMany(Schedule::class);}
 }

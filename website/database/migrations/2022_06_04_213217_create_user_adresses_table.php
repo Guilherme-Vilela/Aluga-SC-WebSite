@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('user_adresses', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->integer("number");
             $table->String("road",45);
             $table->String("district",45); 
@@ -23,6 +23,9 @@ return new class extends Migration
             $table->String("state",45); 
             $table->String("CEP",10);
             $table->String("complement",100);
+            
+            $table->timestamps();
+            
         });
     }
 

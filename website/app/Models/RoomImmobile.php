@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class RoomImmobile extends Model
 {
     use HasFactory;
+    
+    public function immobiles(){
+        return $this->belongsTo(Immobile::class);
+    }
+
+    public function room(){
+        return $this->belongsTo(Room::class);
+    }
 }

@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('immobiles', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->String("name");
             $table->integer("capacity");
             $table->String("status");
             $table->text("description");
             $table->double("value");
             $table->String("image");
+            $table->timestamps();
         });
     }
 

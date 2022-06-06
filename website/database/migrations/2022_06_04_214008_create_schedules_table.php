@@ -15,12 +15,15 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('immobile_id')->references('id')->on('immobiles');
+            $table->foreignId('payment_id')->references('id')->on('payments');
             $table->date("check_in");
             $table->date("check_out");
             $table->String("status");
             $table->String("comment");
             $table->integer("note");
+            $table->timestamps();
         });
     }
 

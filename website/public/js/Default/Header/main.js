@@ -24,4 +24,15 @@ $(document).ready(function(){
       $(target).text(value+1);
       $('#dropdown-menu-people').dropdown("toggle");
     });
+
+    $(".button-search").click(function(){
+      let where     = "para_onde="+$("#navbar_where").val().trim()+"&";
+      let check_in  = "check_in="+$("#navbar_when").val().trim()+ "&";
+      let check_out = "check_out="+$("#navbar_when").val().trim()+ "&";
+      let adults    = "adultos="+$("#number_adults").text().trim()+ "&";
+      let children  = "crianças="+$("#number_childer").text().trim()+ "&";
+      let pet       = "pets=" +$("#number_pets").text().trim();
+      let url       = "/?"+where+adults+children+pet+check_in+check_out;
+      window.location.assign(url);
+    });
   });

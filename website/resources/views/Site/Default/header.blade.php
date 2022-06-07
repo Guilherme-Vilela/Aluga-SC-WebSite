@@ -143,8 +143,6 @@
                             <a class="dropdown_title_config dropdown-item">   Duvidas frequentes</a>
                             <a class="dropdown_title_config dropdown-item">   Ajuda</a>   
                             <div class="dropdown-divider"></div>
-
-
                         </div>
                     </div>
                 </div>

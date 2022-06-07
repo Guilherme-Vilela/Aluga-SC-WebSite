@@ -27,5 +27,5 @@
 @include('Site.Default.footer')
 
 </body>
-
+<script type="text/javascript" src="{{'js/Default/Header/main.js'}}"></script>
 </html>

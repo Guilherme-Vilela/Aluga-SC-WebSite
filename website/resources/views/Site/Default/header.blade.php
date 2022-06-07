@@ -38,7 +38,7 @@
                             <div class="d-flex images_dropdown_where">
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure>
+                                    <figure class = "image_where" value = "Litoral Catarinense">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Litoral Catarinese</figcaption>
@@ -46,21 +46,21 @@
                                 </div>
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure>
+                                    <figure class = "image_where" value = "Vaje do itajai">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Vaje do itajai</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure>
+                                    <figure class = "image_where" value = "Rio dos cedros">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Rio dos cedros</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure>
+                                    <figure class = "image_where" value = "Pomerode">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Pomerode</figcaption>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
@@ -28,4 +29,12 @@ class UserController extends Controller
     public function logout(){   
         Auth::logout();
     }
-}   
+    public function cadastro(Request $request){ 
+        $user = new User();
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->name = $request->name;
+        $user->save();
+       
+    }
+}

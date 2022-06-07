@@ -48,3 +48,10 @@ font-weight: bold;
     color: black;
     font-size: 14px;
 }
+.image_content{
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #ccc;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}

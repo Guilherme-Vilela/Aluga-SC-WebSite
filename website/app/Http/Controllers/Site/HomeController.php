@@ -12,10 +12,22 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $where = $request->query('para_onde');
+        $adults = $request->query('adultos');
+        $children = $request->query('criancas');
+        $pets= $request->query('pets');
+        $check_out=$request->query('check_out');
+        $check_in= $request->query('check_in');
         
-       return view('Site.Home.index', ["title" => "imoveis em destaque"] );
+       return view('Site.Home.index', [
+           "where" => $where,
+           "adults" => $adults,
+           "children"=>$children ,
+           "pets"=>$pets ,
+           "check_out"=>$check_out ,
+           "check_in"=>$check_in, ] );
     }
 
     /**

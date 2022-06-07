@@ -34,7 +34,7 @@
                             <input type="text" name="response_where"
                                 class="nav-link dropdown-toggle border_radius button_header" href="#" id="navbar_where"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                placeholder=" Para onde?" />
+                                placeholder=" Para onde?" value = "@if(!empty($where)) {{$where}} @endif"/>
                             <div class="dropdown-menu" id="dropdown-menu-where" aria-labelledby="navbarDropdown"
                                 style="width: 500px;">
                                 <div class="d-flex images_dropdown_where">
@@ -94,7 +94,7 @@
                                     <div class="d-flex col-sm-6 justify-content-center align-items-center">
                                         <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease"
                                             data-target="number_adults"></i>
-                                        <p id="number_adults">0</p>
+                                        <p id="number_adults">@if(!empty($adults)) {{$adults}}@else 0 @endif</p>
                                         <i class="fa-solid fa-circle-plus fa-xl icon_people button_add"
                                             data-target="number_adults"></i>
                                     </div>
@@ -108,7 +108,7 @@
                                     <div class="d-flex col-sm-6 justify-content-center align-items-center">
                                         <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease"
                                             data-target="number_children"></i>
-                                        <p id="number_children">0</p>
+                                        <p id="number_children">@if(!empty($children)){{$children}}@else 0 @endif</p>
                                         <i class="fa-solid fa-circle-plus fa-xl icon_people button_add"
                                             data-target="number_children"></i>
                                     </div>
@@ -122,7 +122,7 @@
                                     <div class="d-flex col-sm-6 justify-content-center align-items-center">
                                         <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease"
                                             data-target="number_pets"></i>
-                                        <p id="number_pets">0</p>
+                                        <p id="number_pets">@if(!empty($pets)){{$pets}}@else 0 @endif</p>
                                         <i class="fa-solid fa-circle-plus fa-xl icon_people button_add"
                                             data-target="number_pets"></i>
                                     </div>

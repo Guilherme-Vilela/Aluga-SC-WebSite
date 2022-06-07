@@ -39,7 +39,7 @@
                     <div class="texto" style = "padding: 0px !impotant;">
                       <div class = "d-flex justify-content-star" >
                       <a href = "" class = "col-8 p-0"><strong>Timbó, Vaje do itajai</strong></a>
-                      <div class = "col-4 p-0">
+                      <div class = "col-4 p-0 text-right">
                       <a href = "" class = "p-0 text-right">5 <i class="fa-solid fa-star text-right p-0"></i></a>
                       </div>
                       </div>

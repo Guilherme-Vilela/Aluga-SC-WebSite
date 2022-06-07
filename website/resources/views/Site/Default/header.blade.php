@@ -27,6 +27,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form action= "" method="post">
                 <ul class="navbar-nav mr-auto ml-auto" style = "z-index: 1000;">
                     <li class="nav-item dropdown size_animate nav-item">
                         <input type="text" name="response_where"
@@ -38,7 +39,7 @@
                             <div class="d-flex images_dropdown_where">
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure class = "image_where" value = "Litoral Catarinense">
+                                    <figure class = "image_where" data-target="Litoral Catarinense">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Litoral Catarinese</figcaption>
@@ -46,21 +47,21 @@
                                 </div>
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure class = "image_where" value = "Vaje do itajai">
+                                    <figure class = "image_where" data-target="Vaje do itajai">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Vaje do itajai</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure class = "image_where" value = "Rio dos cedros">
+                                    <figure class = "image_where" data-target="Rio dos cedros">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Rio dos cedros</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure class = "image_where" value = "Pomerode">
+                                    <figure class = "image_where"data-target="Pomerode">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Pomerode</figcaption>
@@ -74,7 +75,7 @@
                             class="nav-link dropdown-toggle border_radius button_header" href="#" id="navbar_when"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                             placeholder=" Quando?" />
-                        <div class="dropdown-menu" id="dropdown-menu-where" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" id="dropdown-menu-when" aria-labelledby="navbarDropdown">
                         </div>
                     </li>
                     <li class="nav-item dropdown size_animate nav-item">
@@ -82,7 +83,7 @@
                             class="nav-link dropdown-toggle border_radius button_header" href="#" id="navbar_people"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                             placeholder=" Quantas pessoas?" />
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu-where"
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu-people"
                             style="width: 275px;">
                             <div class="d-flex">
                                 <div class=" col-sm-6">
@@ -90,9 +91,9 @@
                                     <p class="dropdown_sub_title_people">12 anos ou mais</p>
                                 </div>
                                 <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                    <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
-                                    <p>0</p>
-                                    <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
+                                    <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease" data-target="number_adults"></i>
+                                    <p id = "number_adults">0</p>
+                                    <i class="fa-solid fa-circle-plus fa-xl icon_people button_add" data-target="number_adults"></i>
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>
@@ -102,9 +103,9 @@
                                     <p class="dropdown_sub_title_people">De 2 até 12 anos </p>
                                 </div>
                                 <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                    <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
-                                    <p>0</p>
-                                    <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
+                                    <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease" data-target="number_children"></i>
+                                    <p id = "number_children">0</p>
+                                    <i class="fa-solid fa-circle-plus fa-xl icon_people button_add" data-target="number_children"></i>
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>
@@ -114,9 +115,9 @@
                                     <p class="dropdown_sub_title_people"></p>
                                 </div>
                                 <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                    <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
-                                    <p>0</p>
-                                    <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
+                                    <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease" data-target="number_pets"></i>
+                                    <p id = "number_pets">0</p>
+                                    <i class="fa-solid fa-circle-plus fa-xl icon_people button_add" data-target="number_pets"></i>
                                 </div>
                             </div>
                     </li>
@@ -127,6 +128,7 @@
                         </button>
                     </li>
                 </ul>
+            </form>
                 <div class="col-sm-2 d-flex justify-content-center d-none d-lg-block dropdown">
                     <div class="d-flex d-none d-lg-block border_radius text-center align-items-center"
                         style="width: 70px;height: 40px;" role="button" data-toggle="dropdown" aria-haspopup="true"

@@ -1,3 +1,11 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+}
 .border_radius{
     border-radius:30px;
     border: solid 2px black;
@@ -53,5 +61,16 @@ font-weight: bold;
     box-shadow: 1px 1px 1px #ccc;
     overflow: hidden;
     display: flex;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height:200px;
+}
+.carousel-control-next{
+    right: 20px;
+    height:200px;
+
+}
+.carousel-control-prev{
+    left: 20px;
+    height:200px;
 }

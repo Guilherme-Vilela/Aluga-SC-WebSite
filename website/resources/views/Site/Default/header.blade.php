@@ -129,7 +129,7 @@
                 </ul>
                 <div class="col-sm-2 d-flex justify-content-center d-none d-lg-block dropdown">
                     <div class="d-flex d-none d-lg-block border_radius text-center align-items-center"
-                        style="width: 30%;height: 40px;" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        style="width: 70px;height: 40px;" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false ">
                         <i class="fa-solid fa-bars fa-lg" style="margin-top: 17px;"></i>
                         <i class="fa-solid fa-circle-user fa-xl"></i>
@@ -137,7 +137,7 @@
                     <div class="dropdown-menu" id="dropdown-config" aria-labelledby="navbarDropdown">
                         <div class=" images_dropdown_where" >
                             <a class="dropdown_title_config dropdown-item ">   Cadastrar-se</a> 
-                            <a class="dropdown_title_config dropdown-item">   Efetue login</a>
+                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#exampleModal">   Efetue login</a>
                             <div class="dropdown-divider"></div>
 
                             <a class="dropdown_title_config dropdown-item">   Duvidas frequentes</a>

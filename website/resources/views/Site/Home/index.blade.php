@@ -1,6 +1,4 @@
-@extends('site.Default.layout')
+@extends('Site.Default.layout')
 @section('content')
-
-
 @endsection
  

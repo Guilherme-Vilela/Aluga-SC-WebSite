@@ -74,3 +74,14 @@ font-weight: bold;
     left: 20px;
     height:200px;
 }
+#dropdown-menu-when{
+    width: 1000px;
+    height:400px;
+}
+.dropdown-menu-center {
+    right: auto;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}

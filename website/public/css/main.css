@@ -1,3 +1,11 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+}
 .border_radius{
     border-radius:30px;
     border: solid 2px black;
@@ -47,4 +55,33 @@ font-weight: bold;
     text-decoration: none;
     color: black;
     font-size: 14px;
+}
+.image_content{
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #ccc;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:200px;
+}
+.carousel-control-next{
+    right: 20px;
+    height:200px;
+
+}
+.carousel-control-prev{
+    left: 20px;
+    height:200px;
+}
+#dropdown-menu-when{
+    width: 1000px;
+    height:400px;
+}
+.dropdown-menu-center {
+    right: auto;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
 }

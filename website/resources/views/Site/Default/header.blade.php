@@ -1,14 +1,8 @@
-<!-- ***** Preloader Start ***** -->
-<div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-        <span class="dot"></span>
-        <div class="dots">
-        </div>
-    </div>
-</div>
-<!-- ***** Preloader End ***** -->
-
+<link href='{{ asset('js/calendar/lib/main.css') }}' rel='stylesheet' />
+<script src='{{ asset('js/calendar/lib/main.js') }}'></script>
 <!-- ***** Header Area Start ***** -->
+
+
 <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.5s" data-wow-delay="0s">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,18 +21,21 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto ml-auto">
-                    <li class="nav-item dropdown size_animate nav-item">
+                @csrf
+                <ul class="navbar-nav mr-auto ml-auto" style="z-index: 1000;">
+
+                    <li class="nav-item dropdown  nav-item">
                         <input type="text" name="response_where"
-                            class="nav-link dropdown-toggle border_radius button_header" href="#" id="navbar_where"
+                            class="nav-link dropdown-toggle border_radius button_header size_animate" href="#" id="navbar_where"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            placeholder=" Para onde?" />
-                        <div class="dropdown-menu" id="dropdown-menu-where" aria-labelledby="navbarDropdown"
+                            placeholder=" Para onde?"
+                            value="@if (!empty($where)) {{ $where }} @endif" />
+                        <div class="dropdown-menu dropdown-menu-center" id="dropdown-menu-where" aria-labelledby="navbarDropdown"
                             style="width: 500px;">
                             <div class="d-flex images_dropdown_where">
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure>
+                                    <figure class="image_where" data-target="Litoral Catarinense">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Litoral Catarinese</figcaption>
@@ -46,21 +43,21 @@
                                 </div>
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure>
+                                    <figure class="image_where" data-target="Vaje do itajai">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Vaje do itajai</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure>
+                                    <figure class="image_where" data-target="Rio dos cedros">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Rio dos cedros</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure>
+                                    <figure class="image_where" data-target="Pomerode">
                                         <img src="{{ asset('images/imagem_header_praia.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Pomerode</figcaption>
@@ -69,12 +66,17 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown size_animate nav-item">
+                    <li class="nav-item dropdown  nav-item">
                         <input type="text" name="response_when"
-                            class="nav-link dropdown-toggle border_radius button_header" href="#" id="navbar_when"
+                            class="nav-link dropdown-toggle border_radius button_header size_animate" href="#" id="navbar_when"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            placeholder=" Quando ?" />
-                        <div class="dropdown-menu" id="dropdown-menu-where" aria-labelledby="navbarDropdown">
+                            placeholder=" Quando?" />
+
+                        <div class="dropdown-menu dropdown-menu-center" id="dropdown-menu-when"aria-labelledby="navbarDropdown">
+                            <div class = "col-12 d-flex">
+                            <div id='calendar1' class="col-6"></div>
+                            <div id='calendar2' class="col-6"></div>
+                            </div>
                         </div>
                     </li>
                     <li class="nav-item dropdown size_animate nav-item">
@@ -82,7 +84,7 @@
                             class="nav-link dropdown-toggle border_radius button_header" href="#" id="navbar_people"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                             placeholder=" Quantas pessoas?" />
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-menu-where"
+                        <div class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdown" id="dropdown-menu-people"
                             style="width: 275px;">
                             <div class="d-flex">
                                 <div class=" col-sm-6">
@@ -90,9 +92,17 @@
                                     <p class="dropdown_sub_title_people">12 anos ou mais</p>
                                 </div>
                                 <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                    <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
-                                    <p>0</p>
-                                    <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
+                                    <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease"
+                                        data-target="number_adults"></i>
+                                    <p id="number_adults">
+                                        @if (!empty($adults))
+                                            {{ $adults }}
+                                        @else
+                                            0
+                                        @endif
+                                    </p>
+                                    <i class="fa-solid fa-circle-plus fa-xl icon_people button_add"
+                                        data-target="number_adults"></i>
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>
@@ -102,9 +112,17 @@
                                     <p class="dropdown_sub_title_people">De 2 até 12 anos </p>
                                 </div>
                                 <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                    <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
-                                    <p>0</p>
-                                    <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
+                                    <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease"
+                                        data-target="number_children"></i>
+                                    <p id="number_children">
+                                        @if (!empty($children))
+                                            {{ $children }}
+                                        @else
+                                            0
+                                        @endif
+                                    </p>
+                                    <i class="fa-solid fa-circle-plus fa-xl icon_people button_add"
+                                        data-target="number_children"></i>
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>
@@ -114,14 +132,22 @@
                                     <p class="dropdown_sub_title_people"></p>
                                 </div>
                                 <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                    <i class="fa-solid fa-circle-minus fa-xl icon_people"></i>
-                                    <p>0</p>
-                                    <i class="fa-solid fa-circle-plus fa-xl icon_people"></i>
+                                    <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease"
+                                        data-target="number_pets"></i>
+                                    <p id="number_pets">
+                                        @if (!empty($pets))
+                                            {{ $pets }}
+                                        @else
+                                            0
+                                        @endif
+                                    </p>
+                                    <i class="fa-solid fa-circle-plus fa-xl icon_people button_add"
+                                        data-target="number_pets"></i>
                                 </div>
                             </div>
                     </li>
                     <li>
-                        <button class="btn btn-danger button_header d-none d-lg-block "
+                        <button class="btn btn-danger button_header d-none d-lg-block button-search "
                             style="border-radius: 50%; width: 46px;">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
@@ -135,13 +161,13 @@
                         <i class="fa-solid fa-circle-user fa-xl"></i>
                     </div>
                     <div class="dropdown-menu" id="dropdown-config" aria-labelledby="navbarDropdown">
-                        <div class=" images_dropdown_where" >
-                            <a class="dropdown_title_config dropdown-item ">   Cadastrar-se</a> 
-                            <a class="dropdown_title_config dropdown-item">   Efetue login</a>
+                        <div class=" images_dropdown_where">
+                            <a class="dropdown_title_config dropdown-item "> Cadastrar-se</a>
+                            <a class="dropdown_title_config dropdown-item"> Efetue login</a>
                             <div class="dropdown-divider"></div>
 
-                            <a class="dropdown_title_config dropdown-item">   Duvidas frequentes</a>
-                            <a class="dropdown_title_config dropdown-item">   Ajuda</a>   
+                            <a class="dropdown_title_config dropdown-item"> Duvidas frequentes</a>
+                            <a class="dropdown_title_config dropdown-item"> Ajuda</a>
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
@@ -150,4 +176,21 @@
         </nav>
     </div>
 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar1');
+            var calendar1 = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth'
+            });
+            calendar1.render();
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar2');
+            var calendar2 = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth'
+            });
+            calendar2.render();
+        });
+    </script>
 </header>

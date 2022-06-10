@@ -13,9 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::namespace('\App\Http\Controllers')->group(function () {
-    //rotas relacionadas a view HOME
-    Route::get('/', 'Site\HomeController@index');
+// 
+//     //rotas relacionadas a view HOME
+//     Route::get('/', 'Site\HomeController@index');
 
     
-});
+
+Route::namespace('\App\Http\Controllers')->group(function () {
+Route::Resource('imoveis',"ImmobileController@index")->names("immobile")->parameters(['imoveis'=>'immobile']);
+Route::Resource('usuario',"UserController@index")->names("user")->parameters(['usuario'=>'user']);
+Route::Resource('mobilia',"FurnitureController@index")->names("furtinure")->parameters(['mobilia'=>'furtinure']);
+Route::Resource('pagamento',"PaymentController@index")->names("payment")->parameters(['pagamento'=>'payment']);
+Route::Resource('comodo',"RoomController@index")->names("room")->parameters(['comodo'=>'room']);
+Route::Resource('agenda',"ScheduleController@index")->names("schedule")->parameters(['agenda'=>'schedule']);
+
+ });

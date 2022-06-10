@@ -1,33 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Site;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Schedule;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ScheduleController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $where = $request->query('para_onde');
-        $adults = $request->query('adultos');
-        $children = $request->query('criancas');
-        $pets= $request->query('pets');
-        $check_out=$request->query('check_out');
-        $check_in= $request->query('check_in');
-        
-       return view('Site.Home.index', [
-           "where" => $where,
-           "adults" => $adults,
-           "children"=>$children ,
-           "pets"=>$pets ,
-           "check_out"=>$check_out ,
-           "check_in"=>$check_in, ] );
+        //
     }
 
     /**
@@ -54,13 +41,10 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Schedule  $schedule
      * @return \Illuminate\Http\Response
      */
-
-
-
-    public function show($slug)
+    public function show(Schedule $schedule)
     {
         //
     }
@@ -68,10 +52,10 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Schedule  $schedule
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Schedule $schedule)
     {
         //
     }
@@ -80,10 +64,10 @@ class HomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Schedule  $schedule
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Schedule $schedule)
     {
         //
     }
@@ -91,10 +75,10 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Schedule  $schedule
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Schedule $schedule)
     {
         //
     }

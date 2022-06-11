@@ -14,8 +14,8 @@ class ImmobileController extends Controller
      */
     public function index()
     {
-        //
-    }
+        return view("Home/index");
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +46,7 @@ class ImmobileController extends Controller
      */
     public function show(Immobile $immobile)
     {
-        //
+        return view("Immobile/index");
     }
 
     /**

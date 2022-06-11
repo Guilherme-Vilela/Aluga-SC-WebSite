@@ -1,4 +1,4 @@
-@extends('site.Default.layout')
+@extends('Default.layout')
 @section('content')
     <main class="container mt-5" >
         <div class="row">

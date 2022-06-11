@@ -17,14 +17,14 @@ use Illuminate\Support\Facades\Route;
 //     //rotas relacionadas a view HOME
 //     Route::get('/', 'Site\HomeController@index');
 
-    
 
 Route::namespace('\App\Http\Controllers')->group(function () {
-Route::Resource('imoveis',"ImmobileController@index")->names("immobile")->parameters(['imoveis'=>'immobile']);
-Route::Resource('usuario',"UserController@index")->names("user")->parameters(['usuario'=>'user']);
-Route::Resource('mobilia',"FurnitureController@index")->names("furtinure")->parameters(['mobilia'=>'furtinure']);
-Route::Resource('pagamento',"PaymentController@index")->names("payment")->parameters(['pagamento'=>'payment']);
-Route::Resource('comodo',"RoomController@index")->names("room")->parameters(['comodo'=>'room']);
-Route::Resource('agenda',"ScheduleController@index")->names("schedule")->parameters(['agenda'=>'schedule']);
+Route::get('/teste', 'ImmobileController@show')->name("home");
+Route::Resource('imovel',"ImmobileController")->names("immobile")->parameters(['imovel'=>'immobile']);
+Route::Resource('usuario',"UserController")->names("user")->parameters(['usuario'=>'user']);
+Route::Resource('mobilia',"FurnitureController")->names("furtinure")->parameters(['mobilia'=>'furtinure']);
+Route::Resource('pagamento',"PaymentController")->names("payment")->parameters(['pagamento'=>'payment']);
+Route::Resource('comodo',"RoomController")->names("room")->parameters(['comodo'=>'room']);
+Route::Resource('agenda',"ScheduleController")->names("schedule")->parameters(['agenda'=>'schedule']);
 
  });

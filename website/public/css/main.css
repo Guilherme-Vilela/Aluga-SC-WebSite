@@ -85,3 +85,58 @@ font-weight: bold;
     -o-transform: translate(-50%, 0);
     transform: translate(-50%, 0);
 }
+.image_immobile_header{
+    max-width: 100%;
+    box-shadow: 1px 1px 1px #ccc;
+    border-radius: 10px;
+
+}   
+.content_immobile_header{
+    overflow: hidden;
+    max-height: 600px;
+    display:flex;
+    justify-content:center;
+}
+.name_immobile{
+ 
+}
+.attribute_immobile{
+    margin: 0px 10px;
+}
+.option_reserve{
+    border: 1px solid #b0b0b0;
+    box-shadow: 1px 1px 1px #ccc;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+}
+.content_bed{
+    height:120px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.title_check{
+   font-size:14px; 
+}
+.image_people_immobile{
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+    overflow:hidden;
+}
+.content_rigth_immbile{
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+    border:1px solid #b0b0b0;
+    min-height:300px;
+    max-height: 400px;
+}
+.btn_reserve{
+    width:100%;
+    border-radius:7px;
+}
+.border-radius-top-left{border-radius:5px 0px 0px 0px;}
+.border-radius-top-rigth{border-radius:0px 5px 0px 0px;}
+.border-radius-bottom{border-radius:0px 0px 5px 5px;}

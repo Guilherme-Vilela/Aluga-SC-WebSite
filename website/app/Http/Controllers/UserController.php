@@ -20,9 +20,6 @@ class UserController extends Controller
             
         }else{
             dd("não logado");
-            // return back()->withErrors([
-            //     'email' => 'Email ou senha invalidos',
-            // ])->onlyInput('email');
         }
         
     }

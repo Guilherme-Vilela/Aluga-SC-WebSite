@@ -66,4 +66,5 @@
         // $("#carouselExampleIndicators").carousel('pause');
 });
       </script>
+
 @endsection

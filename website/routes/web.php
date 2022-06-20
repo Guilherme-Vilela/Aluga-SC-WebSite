@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::namespace('\App\Http\Controllers')->group(function () {
-Route::get('/teste', 'ImmobileController@show')->name("home");
+Route::get('/', 'ImmobileController@index')->name("home");
+Route::get('/teste', 'ImmobileController@show')->name("immobile");
 Route::Resource('imovel',"ImmobileController")->names("immobile")->parameters(['imovel'=>'immobile']);
 Route::Resource('usuario',"UserController")->names("user")->parameters(['usuario'=>'user']);
 Route::Resource('mobilia',"FurnitureController")->names("furtinure")->parameters(['mobilia'=>'furtinure']);

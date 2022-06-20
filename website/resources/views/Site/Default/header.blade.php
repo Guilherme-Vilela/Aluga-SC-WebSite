@@ -27,7 +27,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto ml-auto">
+                <ul class="navbar-nav mr-auto ml-auto" style = "z-index: 1000;">
                     <li class="nav-item dropdown size_animate nav-item">
                         <input type="text" name="response_where"
                             class="nav-link dropdown-toggle border_radius button_header" href="#" id="navbar_where"
@@ -73,7 +73,7 @@
                         <input type="text" name="response_when"
                             class="nav-link dropdown-toggle border_radius button_header" href="#" id="navbar_when"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            placeholder=" Quando ?" />
+                            placeholder=" Quando?" />
                         <div class="dropdown-menu" id="dropdown-menu-where" aria-labelledby="navbarDropdown">
                         </div>
                     </li>
@@ -137,7 +137,7 @@
                     <div class="dropdown-menu" id="dropdown-config" aria-labelledby="navbarDropdown">
                         <div class=" images_dropdown_where" >
                             <a class="dropdown_title_config dropdown-item ">   Cadastrar-se</a> 
-                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#exampleModal">   Efetue login</a>
+                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_login">   Efetue login</a>
                             <div class="dropdown-divider"></div>
 
                             <a class="dropdown_title_config dropdown-item">   Duvidas frequentes</a>

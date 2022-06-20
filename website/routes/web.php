@@ -12,13 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/login',function(){
-    return view("Site/Login/index");
+Route::namespace('\App\Http\Controllers')->group( function() {
+
+    Route::get('/','Site\HomeController@index');
+    Route::get('/{slug}','Site\HomeController@show');
+    
 });
-// Route::get('/', function () {
-//     return view('Site.index');
-// });
-Route::namespace('\App\Http\Controllers\Site')->group( function() {
-    Route::get('/','HomeController@index');
-    Route::get('/{slug}','HomeController@show');
-});
+Route::post('/cadastro','\App\Http\Controllers\UserController@cadastro')->name('cadastro');

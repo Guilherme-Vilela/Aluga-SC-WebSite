@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal_login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -12,28 +12,32 @@
 
             <div class="modal-body">
                 <div class="container">
-                    <form method = "POST" action = "{{route("login")}}">
+                    <form method="get" action="{{route("user.create")}}">
                         @csrf
-                        <div class="form-group row input_email">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label input_email"><b>Email</b></label>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label "><b>Nome</b></label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control border_radius" id="inputEmail" name = "email"
+                                <input type="text" class="form-control border_radius" id="input_password" name = "name"
+                                    placeholder="Digite sua Senha" required>
+                            </div>
+                        </div>
+                        <div class="form-group row ">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label "><b>Email</b></label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control border_radius" id="input_email" name = "email"
                                     placeholder="Digite seu Email" required>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label input_email"><b>Senha</b></label>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label "><b>Senha</b></label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control border_radius" id="inputPassword3" name = "password"
+                                <input type="password" class="form-control border_radius" id="input_password" name = "password"
                                     placeholder="Digite sua Senha" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <a href="#" class="ls-login-forgot">Esqueci minha senha</a>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12 d-flex justify-content-center">
-                                <button type="submit" class="btn btn-dark input_botaologin">LOGIN</button>
+                                <button type="submit" class="btn btn-dark input_botaologin">Cadastre-se</button>
                             </div>
                             <div class="col-sm-10">
                                 <p class="txt-center ls-login-signup"><b>Ainda não possui cadastro no Aluga-SC?</b></p>

@@ -21,7 +21,7 @@
                           <li data-target="#carrosel{{$i}}" data-slide-to="2"></li>
                          
                         </ol>
-                        <a href="#">
+                        <a href="{{route("immobile.show",["immobile"=>$immobile->id])}}">
                         <div class="carousel-inner" >
                           <div class="carousel-item active ">
                             <img class="d-block" style = "height:200px;" src="https://cdn.pixabay.com/photo/2017/09/09/18/25/living-room-2732939_960_720.jpg" alt="First slide">

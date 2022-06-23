@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Immobile;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ImmobileController extends Controller
@@ -12,9 +13,11 @@ class ImmobileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view("Home/index");
+    public function index(Request $request)
+    {   
+        $immobile = new Immobile();
+        $immobile->id = 1;
+        return view("Home/index", ["immobile"=> $immobile]);
      }
 
     /**

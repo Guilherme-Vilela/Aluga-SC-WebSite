@@ -25,7 +25,8 @@
 @include('Default.header')
 @yield('content')
 @include('Default.footer')
-
+@include('Default.login')
+@include('Default.register')
 </body>
 <script type="text/javascript" src="{{'js/Default/Header/main.js'}}"></script>
 </html>

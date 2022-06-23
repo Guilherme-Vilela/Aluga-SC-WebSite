@@ -19,7 +19,7 @@ return new class extends Migration
             $table->String("name");
             $table->integer("capacity");
             $table->String("status");
-            $table->text("description");
+            $table->text("description")->nullable();
             $table->double("value");
             $table->String("image");
             $table->timestamps();

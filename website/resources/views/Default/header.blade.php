@@ -1,12 +1,10 @@
 <link href='{{ asset('js/calendar/lib/main.css') }}' rel='stylesheet' />
 <script src='{{ asset('js/calendar/lib/main.js') }}'></script>
 <!-- ***** Header Area Start ***** -->
-
-
 <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.5s" data-wow-delay="0s">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{route("home")}}">
                 <div class="d-flex justify-content-start align-items-center ">
                     <div>
                         <i class="fa-solid fa-map-location-dot fa-3x"></i>
@@ -161,13 +159,21 @@
                         <i class="fa-solid fa-circle-user fa-xl"></i>
                     </div>
                     <div class="dropdown-menu" id="dropdown-config" aria-labelledby="navbarDropdown">
-                        <div class=" images_dropdown_where">
-                            <a class="dropdown_title_config dropdown-item "> Cadastrar-se</a>
-                            <a class="dropdown_title_config dropdown-item"> Efetue login</a>
+                        <div class=" images_dropdown_where" >
+                            @if(empty(auth()->user()->name))
+                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_cadastro">   Cadastrar-se</a> 
+                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_login">   Efetue login</a>
+                           
+                            @else
+                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_cadastro">Bem vindo  {{auth()->user()->name}}</a> 
+                           @endif
                             <div class="dropdown-divider"></div>
 
                             <a class="dropdown_title_config dropdown-item"> Duvidas frequentes</a>
-                            <a class="dropdown_title_config dropdown-item"> Ajuda</a>
+                            <a class="dropdown_title_config dropdown-item" href= ""> Ajuda</a>
+                            @if(!empty(auth()->user()->name))
+                            <a class="dropdown_title_config dropdown-item" href= "{{route("logout")}}"> Logout</a>
+                            @endif
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>

@@ -22,10 +22,11 @@
 </head>
 <body>
 
-@include('Site.Default.header')
+@include('Default.header')
 @yield('content')
-@include('Site.Default.footer')
-
+@include('Default.footer')
+@include('Default.login')
+@include('Default.register')
 </body>
 <script type="text/javascript" src="{{'js/Default/Header/main.js'}}"></script>
 </html>

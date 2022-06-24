@@ -34,7 +34,7 @@
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Litoral Catarinense">
-                                        <img src="{{ asset('images/imagem_header_praia.jpg') }}"
+                                        <img src="{{ asset('images/header/imagem_01.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Litoral Catarinese</figcaption>
                                     </figure>
@@ -42,21 +42,21 @@
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Vaje do itajai">
-                                        <img src="{{ asset('images/imagem_header_praia.jpg') }}"
+                                        <img src="{{ asset('images/header/imagem_02.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Vaje do itajai</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Rio dos cedros">
-                                        <img src="{{ asset('images/imagem_header_praia.jpg') }}"
+                                        <img src="{{ asset('images/header/imagem_03.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Rio dos cedros</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Pomerode">
-                                        <img src="{{ asset('images/imagem_header_praia.jpg') }}"
+                                        <img src="{{ asset('images/header/imagem_04.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Pomerode</figcaption>
                                     </figure>
@@ -145,8 +145,8 @@
                             </div>
                     </li>
                     <li>
-                        <button class="btn btn-danger button_header d-none d-lg-block button-search "
-                            style="border-radius: 50%; width: 46px;">
+                        <button class="btn btn-danger button_header d-none d-lg-block button-search text-center"
+                            style="border-radius: 50%; width: 53px;">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </li>
@@ -161,7 +161,7 @@
                     <div class="dropdown-menu" id="dropdown-config" aria-labelledby="navbarDropdown">
                         <div class=" images_dropdown_where" >
                             @if(empty(auth()->user()->name))
-                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_cadastro">   Cadastrar-se</a> 
+                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_register">   Cadastrar-se</a> 
                             <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_login">   Efetue login</a>
                            
                             @else

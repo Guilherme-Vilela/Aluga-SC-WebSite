@@ -35,4 +35,22 @@ $(document).ready(function(){
       let url       = "/?"+where+adults+children+pet+check_in+check_out;
       window.location.assign(url);
     });
+
+
+
+
+
+
+
+    // functions login
+    $("#btn_login_register").click(function(){
+      $("#modal_login").modal("hide");
+      $("#modal_register").modal("show");
+  });
+
+     // functions register
+     $("#btn_register_login").click(function(){
+      $("#modal_register").modal("hide");
+      $("#modal_login").modal("show");
+  });
   });

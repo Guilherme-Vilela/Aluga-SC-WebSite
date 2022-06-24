@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="modal_register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -40,7 +40,7 @@
                                 <button type="submit" class="btn btn-dark btn_login">Cadastrar-<span style = "text-transform: lowercase;">se</span></button>
                             </div>
                             <div class="col-sm-10 mt-5">
-                                <a href="" class="txt-center ls-login-signup">Já possui cadastro? <b>Entre
+                                <a class="txt-center ls-login-signup" id = "btn_register_login"style = "cursor: pointer">Já possui cadastro? <b>Entre
                                         aqui</b></a>
                             </div>
                 </div>

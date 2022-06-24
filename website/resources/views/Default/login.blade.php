@@ -33,7 +33,7 @@
                                 <button type="submit" class="btn btn-dark btn_login">Entrar</button>
                             </div>
                             <div class="col-sm-10 mt-5">
-                                <a href="" class="txt-center ls-login-signup">Não possui cadastro? <b>Cadastre-se
+                                <a  id ="btn_login_register" class="txt-center ls-login-signup" style = "cursor: pointer;">Não possui cadastro? <b>Cadastre-se
                                         aqui</b></a>
                             </div>
                         </div>

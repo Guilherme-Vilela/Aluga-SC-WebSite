@@ -161,7 +161,7 @@
                     <div class="dropdown-menu" id="dropdown-config" aria-labelledby="navbarDropdown">
                         <div class=" images_dropdown_where" >
                             @if(empty(auth()->user()->name))
-                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_cadastro">   Cadastrar-se</a> 
+                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_register">   Cadastrar-se</a> 
                             <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_login">   Efetue login</a>
                            
                             @else

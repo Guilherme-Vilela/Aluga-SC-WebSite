@@ -34,7 +34,7 @@
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Litoral Catarinense">
-                                        <img src="{{ asset('images/imagem_header_praia.jpg') }}"
+                                        <img src="{{ asset('images/header/imagem_01.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Litoral Catarinese</figcaption>
                                     </figure>
@@ -42,21 +42,21 @@
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Vaje do itajai">
-                                        <img src="{{ asset('images/imagem_header_praia.jpg') }}"
+                                        <img src="{{ asset('images/header/imagem_02.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Vaje do itajai</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Rio dos cedros">
-                                        <img src="{{ asset('images/imagem_header_praia.jpg') }}"
+                                        <img src="{{ asset('images/header/imagem_03.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Rio dos cedros</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Pomerode">
-                                        <img src="{{ asset('images/imagem_header_praia.jpg') }}"
+                                        <img src="{{ asset('images/header/imagem_04.jpg') }}"
                                             class="img-thumbnail" alt="">
                                         <figcaption class="text-center">Pomerode</figcaption>
                                     </figure>

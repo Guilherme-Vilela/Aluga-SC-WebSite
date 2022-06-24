@@ -169,11 +169,6 @@ body {
     margin: 0 15px;
     text-align: center
     }
-/*
-    justify-content: center;
-    align-items: center;
-    height:200px;
-} */
 .carousel-control-next{
     right: 20px;
     height:200px;
@@ -249,3 +244,53 @@ body {
 .border-radius-top-rigth{border-radius:0px 5px 0px 0px;}
 .border-radius-bottom{border-radius:0px 0px 5px 5px;}
 
+.input_login{
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    margin: 0px auto;
+    height: 45px;
+    background: 0 0;
+    padding: 0 5px;
+    border:none;
+    border-bottom:2px solid #ccc; 
+    border-image-slice: 1;
+    margin-top:-7px;
+    background: white !important;
+    height: 20px;
+    
+} 
+.btn_login{
+    border-radius: 30px;
+    width: 80%;
+    margin: 0px auto;
+    background-image: linear-gradient(to right, #F53844,  #42378F);
+    border: 1px #ccc solid;
+    font-weight: bold;
+    
+}
+.input_login:focus{
+    border:none;
+    height: 50px;
+    border-bottom:1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    box-shadow: 0px 0px 0px #ccc;
+}
+textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 30px white inset !important; 
+}
+.loss_password{
+    font-size: 12px;
+    color:blue;
+    text-align:right;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+    height: 40px;
+}

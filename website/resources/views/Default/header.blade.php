@@ -145,8 +145,8 @@
                             </div>
                     </li>
                     <li>
-                        <button class="btn btn-danger button_header d-none d-lg-block button-search "
-                            style="border-radius: 50%; width: 46px;">
+                        <button class="btn btn-danger button_header d-none d-lg-block button-search text-center"
+                            style="border-radius: 50%; width: 53px;">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </li>

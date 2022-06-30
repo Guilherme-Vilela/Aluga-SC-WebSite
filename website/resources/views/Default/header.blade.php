@@ -161,9 +161,8 @@
                     <div class="dropdown-menu" id="dropdown-config" aria-labelledby="navbarDropdown">
                         <div class=" images_dropdown_where" >
                             @if(empty(auth()->user()->name))
-                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_register">   Cadastrar-se</a> 
+                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_register"> Cadastrar-se</a> 
                             <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_login">   Efetue login</a>
-                           
                             @else
                             <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_cadastro">Bem vindo  {{auth()->user()->name}}</a> 
                            @endif
@@ -179,6 +178,7 @@
                     </div>
                 </div>
             </div>
+            <div><a href = "{{route("immobile.create")}}" class ="btn btn-danger" >Cadastre seu imovel</a></div>
         </nav>
     </div>
 

@@ -27,7 +27,7 @@ class ImmobileController extends Controller
      */
     public function create()
     {
-        //
+        return view("Immobile/create");
     }
 
     /**
@@ -49,7 +49,7 @@ class ImmobileController extends Controller
      */
     public function show(Immobile $immobile)
     {
-        return view("Immobile/index");
+        return view("Immobile/show");
     }
 
     /**

@@ -294,3 +294,34 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset;
     height: 40px;
 }
+.right_side_create_immobile{
+    background-image: linear-gradient(red, rgb(23, 0, 128));
+    height:85vh;
+    overflow: hidden;
+}
+.message_create_immobile{
+    font-size:40px;
+    color:white;
+    text-align: center;
+}
+.button_selection_create_immobile{
+    width:40%;
+    height:100px;
+    border-radius:15px;
+    box-shadow: 1px 1px 1px #ccc;
+    overflow: hidden;   
+    font-size: 17px;
+    
+}
+
+.image_option_create_immobile{
+    width:30%; 
+    border-radius:10px;
+
+}
+.text_create_immobile_part_1{
+    font-size: 20px;
+}
+.cursor-pointer{
+    cursor:pointer;
+}

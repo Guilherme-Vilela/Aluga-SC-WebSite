@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('\App\Http\Controllers')->group(function () {
 Route::get('/', 'ImmobileController@index')->name("home");
+Route::get('/atualizacao', 'UserController@update')->name("user_register_complete");
 Route::post('/login','UserController@login')->name("login");
 Route::get('/logout','UserController@logout')->name("logout");
 Route::post('/register','UserController@register')->name("register");

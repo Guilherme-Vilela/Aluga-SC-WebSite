@@ -294,3 +294,15 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 30px white inset;
     height: 40px;
 }
+h11 {
+    color:red;
+}
+
+#logo {
+        width:50%;
+        height:50%;
+}
+
+.panel-heading{
+    font-size:150%;
+}

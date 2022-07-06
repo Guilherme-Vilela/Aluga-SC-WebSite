@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Furniture;
+use App\Models\ImageImmobile;
 use App\Models\Immobile;
+use App\Models\ImmobileAdress;
 use App\Models\Room;
+use App\Models\RoomImmobile;
+use App\Models\RoomImmobileFurniture;
 use Illuminate\Http\Request;
 
 class ImmobileController extends Controller
@@ -15,11 +19,11 @@ class ImmobileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {   
+    {
         $immobile = new Immobile();
         $immobile->id = 1;
-        return view("Home/index", ["immobile"=> $immobile]);
-     }
+        return view("Home/index", ["immobile" => $immobile]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -27,8 +31,10 @@ class ImmobileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view("Immobile/create");
+    {   
+        $rooms = Room::all();
+        $furnitures = Furniture::all();
+        return view("Immobile/create", ['rooms'=>$rooms, "furnitures"=>$furnitures]);
     }
 
     /**
@@ -39,15 +45,29 @@ class ImmobileController extends Controller
      */
     public function store(Request $request)
     {
+        //Save Immobille 
         $immobile = new immobile();
-        $immobile->name = $request->input_name_immobile;
-        $immobile->capacity= $request->capacity;
-        $immobile->status = $request->status;
-        $immobile->description = $request->description;
+        $immobile->name = $request->name_immobile;
+        $immobile->type = $request->type_immobile;
+        $immobile->capacity = 1;
         $immobile->user_id = $request->user_id;
-        dd($request);
-        // 
+        $immobile->value =  $request->value_immobile;
+        $immobile->description = $request->description_immobile;
+        $immobile->rules = $request->rules_immobile;
+        $immobile->status = "ativo";
+        $immobile->user_id = auth()->user()->id;
+        $immobile->image = "";
+        $immobile->save();
+        // $immobile->addAddress();
+        $immobile->addRooms($request->rooms_immobile);
+        $immobile->addImage($request->file('image'));
+        // $immobile->addfurniture($request->rooms_immobile);
+        // $furnitures = explode(",", $request->coveniences_immobile);
 
+        // Upload image
+        if ($request->file('image')) {
+            
+        }
     }
 
     /**

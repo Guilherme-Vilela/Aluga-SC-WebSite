@@ -23,10 +23,13 @@ Route::get('/', 'ImmobileController@index')->name("home");
 Route::post('/login','UserController@login')->name("login");
 Route::get('/logout','UserController@logout')->name("logout");
 Route::post('/register','UserController@register')->name("register");
-Route::Resource('/imovel',"ImmobileController")->names("immobile")->parameters(['imovel'=>'immobile']);
-Route::Resource('/mobilia',"FurnitureController")->names("furtinure")->parameters(['mobilia'=>'furtinure']);
-Route::Resource('/pagamento',"PaymentController")->names("payment")->parameters(['pagamento'=>'payment']);
-Route::Resource('/comodo',"RoomController")->names("room")->parameters(['comodo'=>'room']);
-Route::Resource('/agenda',"ScheduleController")->names("schedule")->parameters(['agenda'=>'schedule']);
+Route::Resource('/imovel',"ImmobileController")->middleware('auth')->names("immobile")->parameters(['imovel'=>'immobile']);
+
+
+
+// Route::Resource('/mobilia',"FurnitureController")->names("furtinure")->parameters(['mobilia'=>'furtinure']);
+// Route::Resource('/pagamento',"PaymentController")->names("payment")->parameters(['pagamento'=>'payment']);
+// Route::Resource('/comodo',"RoomController")->names("room")->parameters(['comodo'=>'room']);
+// Route::Resource('/agenda',"ScheduleController")->names("schedule")->parameters(['agenda'=>'schedule']);
 Route::Resource('usuario',"UserController")->names("user")->parameters(['usuario'=>'user']);
  });

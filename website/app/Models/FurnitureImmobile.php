@@ -5,21 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RoomFurniture extends Model
+class RoomImmobileFurniture extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'room_id',
-        'furtinure_id',
+        'roomImmobile',
+        'furtinureId',
     ];
     public function furniture()
     {
         return $this->belongsTo(Furniture::class);
     }
-    public function room()
+    public function immobile()
     {
-        return $this->belongsTo(Room::class);
+        return $this->belongsTo(Immobile::class);
     }
     
 }

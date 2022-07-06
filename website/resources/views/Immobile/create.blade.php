@@ -97,7 +97,7 @@
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Espaços de jogos">
+                                                        value="Espaços de jogos" value_id="0">
                                                         <span><b>Espaços de jogos</b><i
                                                                 class="fa-solid fa-chess-board"></i></span>
                                                     </button>
@@ -105,14 +105,14 @@
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Piscina">
+                                                        value="Piscina" value_id="1">
                                                         <span><b>Piscina</b><i class="fa-solid fa-water-ladder"></i></span>
                                                     </button>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Churrasqueira">
+                                                        value="Churrasqueira" value_id="2">
                                                         <span><b>Churrasqueira</b><i
                                                                 class="fa-solid fa-fire-burner"></i></span>
                                                     </button>
@@ -120,35 +120,35 @@
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Jardim">
+                                                        value="Jardim" value_id="3">
                                                         <span><b>Jardim</b><i class="fa-solid fa-tree"></i></span>
                                                     </button>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Banheira">
+                                                        value="Banheira" value_id="4">
                                                         <span><b>Banheira</b><i class="fa-solid fa-bath"></i></span>
                                                     </button>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Wi-fi">
+                                                        value="Wi-fi" value_id="5">
                                                         <span><b>Wi-fi</b><i class="fa-solid fa-wifi"></i></span>
                                                     </button>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="TV">
+                                                        value="TV" value_id="6">
                                                         <span><b>TV</b><i class="fa-solid fa-tv"></i></span>
                                                     </button>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Garagem">
+                                                        value="Garagem" value_id="7">
                                                         <span><b>Garagem</b><i class="fa-solid fa-warehouse"></i></span>
                                                     </button>
                                                 </div>
@@ -168,42 +168,42 @@
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Sala de estar">
+                                                        value="Sala de estar" value_id="0">
                                                         <span><b>Sala de estar</b></span>
                                                     </button>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Cozinha">
+                                                        value="Cozinha" value_id="1">
                                                         <span><b>Cozinha</b></span>
                                                     </button>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Área externa">
+                                                        value="Área externa" value_id="2">
                                                         <span><b>Área externa</b></span>
                                                     </button>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Garagem">
+                                                        value="Garagem" value_id="3">
                                                         <span><b>Garagem</b></span>
                                                     </button>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Área para churrasco">
+                                                        value="Área para churrasco" value_id="4">
                                                         <span><b>Área para churrasco</b></i></span>
                                                     </button>
                                                 </div>
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Lavanderia">
+                                                        value="Lavanderia" value_id="5">
                                                         <span><b>Lavanderia</b></span>
                                                     </button>
                                                 </div>
@@ -230,10 +230,34 @@
                             <div class="carousel-item">
                                 <div class="col-12 d-flex align-items-center" style="height:70vh;">
                                     <div class="row ">
-                                        <div class="col-12 d-flex justify-content-center m-2">
-                                            <label>Imagens da sua residencia </label>
-                                            <input type="file" class="form-control">
-                                        </div>
+                                        <form action="{{ route('immobile.store') }}" method="POST"
+                                            enctype="multipart/form-data" id="form_store_immobile">
+                                            @csrf
+                                            <div class="col-12 d-flex justify-content-center m-2">
+                                                <label>Imagens da sua residencia </label>
+                                                <input type="file" id="image_immobile" name = "image" class="form-control">
+                                            </div>
+                                            <input id="input_type_immobile" type=text name="type_immobile"
+                                                class="d-none">
+                                            <input id="input_address_immobile" type=text name="address_immobile"
+                                                class="d-none">
+                                            <input id="input_name_immobile" type=text name="name_immobile"
+                                                class="d-none">
+                                            <input id="input_value_immobile" type=text name="value_immobile"
+                                                class="d-none">
+                                            <input id="input_bedrooms_immobile" type=text name="bedrooms_immobile"
+                                                class="d-none">
+                                            <input id="input_bathrooms_immobile" type=text name="bathrooms_immobile"
+                                                class="d-none">
+                                            <input id="input_coveniences_immobile" type=text name="coveniences_immobile"
+                                                class="d-none">
+                                            <input id="input_rooms_immobile" type=text name="rooms_immobile"
+                                                class="d-none">
+                                            <input id="input_rules_immobile" type=text name="rules_immobile"
+                                                class="d-none">
+                                            <input id="input_description_immobile" type=text name="description_immobile"
+                                                class="d-none">
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -253,19 +277,8 @@
             </div>
         </div>
     </main>
-    <form class="d-none" action = "{{route("immobile.store")}}" method = "POST" id = "form_store_immobile">
-        @csrf
-        <input id="input_type_immobile" type=text name="input_type_immobile" class="d-none">
-        <input id="input_address_immobile" type=text name="input_address_immobile" class="d-none">
-        <input id="input_name_immobile" type=text name="input_name_immobile" class="d-none">
-        <input id="input_value_immobile" type=text name="input_value_immobile" class="d-none">
-        <input id="input_bedrooms_immobile" type=text name="input_bedrooms_immobile" class="d-none">
-        <input id="input_bathrooms_immobile" type=text name="input_bathrooms_immobile" class="d-none">
-        <input id="input_coveniences_immobile" type=text name="input_coveniences_immobile" class="d-none">
-        <input id="input_rooms_immobile" type=text name="input_rooms_immobile" class="d-none">
-        <input id="input_rules_immobile" type=text name="input_rules_immobile" class="d-none">
-        <input id="input_description_immobile" type=text name="input_description_immobile" class="d-none">
-    </form>
+
+
     <script>
         var array_immobile = [];
         $(document).ready(function() {
@@ -328,7 +341,7 @@
                         validate_rules_immobile(value_carrosel_);
                         break;
                     case '6':
-                    request_create_immobile(array_immobile);
+                        request_create_immobile(array_immobile);
                         break;
 
 
@@ -413,6 +426,7 @@
                 let validate_characteristic_immobile = [name_immobile, value_immobile, bedromms_immobile,
                     bathrooms_immobile
                 ];
+
                 array_immobile[position] = (validate_characteristic_immobile);
                 move_carousel("next");
                 return true;
@@ -424,10 +438,12 @@
         }
 
         function validate_convenience_immobile(position) {
-            let coveniences = ["covenience"];
+            let coveniences = [
+                ["covenience", "0"]
+            ];
             $(".option_convenience").each(function(index) {
                 if ($(this).attr("select") == "selected") {
-                    let convenience = $(this).attr("value");
+                    let convenience = [$(this).attr("value"), $(this).attr("value_id")];
                     coveniences.push(convenience);
                 }
             });
@@ -436,15 +452,18 @@
         }
 
         function validate_room_immobile(position) {
-            let rooms = ["room"];
+            let rooms = [
+                ["room", "0"]
+            ];
             $(".option_rooms").each(function(index) {
                 if ($(this).attr("select") == "selected") {
-                    let room = $(this).attr("value");
+                    let room = [$(this).attr("value"), $(this).attr("value_id")];
                     rooms.push(room);
                 }
             });
             array_immobile[position] = (rooms);
             move_carousel("next");
+
         }
 
         function validate_rules_immobile(position) {
@@ -459,20 +478,20 @@
             array_immobile[position] = (validate_rules_immobile);
             move_carousel("next");
         }
-        function request_create_immobile(position){
-            console.log(array_immobile);
-           $("#input_type_immobile").val(array_immobile[0][1]);     
-           $("#input_name_immobile").val(array_immobile[2][0][1]);
-           $("#input_value_immobile").val( array_immobile[2][1][1]);
-           $("#input_bedrooms_immobile").val(array_immobile[2][2][1]);
-           $("#input_bathrooms_immobile").val(array_immobile[2][3][1]);
-           $("#input_coveniences_immobile").val(array_immobile[3].toString());
-           $("#input_rooms_immobile").val(array_immobile[4].toString());
-           $("#input_rules_immobile").val(array_immobile[5][1][1]);
-           $("#input_description_immobile").val(array_immobile[5][2][1]);
-           $("#form_store_immobile").submit();
+
+        function request_create_immobile(position) {
+            $("#input_type_immobile").val(array_immobile[0][1]);
+            $("#input_name_immobile").val(array_immobile[2][0][1]);
+            $("#input_value_immobile").val(array_immobile[2][1][1]);
+            $("#input_bedrooms_immobile").val(array_immobile[2][2][1]);
+            $("#input_bathrooms_immobile").val(array_immobile[2][3][1]);
+            $("#input_coveniences_immobile").val(array_immobile[3].toString());
+            $("#input_rooms_immobile").val(array_immobile[4].toString());
+            $("#input_rules_immobile").val(array_immobile[5][1][1]);
+            $("#input_description_immobile").val(array_immobile[5][2][1]);
+            $("#form_store_immobile").submit();
         }
-        function transform_array_string(){
-        }
+
+        function transform_array_string() {}
     </script>
 @endsection

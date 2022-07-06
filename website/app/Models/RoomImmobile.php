@@ -19,4 +19,7 @@ class RoomImmobile extends Model
     public function room(){
         return $this->belongsTo(Room::class);
     }
+    public function roomImmobileFurniture(){
+        return $this->hasMany(roomImmobileFurniture::class);
+    }
 }

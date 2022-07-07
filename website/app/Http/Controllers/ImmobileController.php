@@ -20,9 +20,8 @@ class ImmobileController extends Controller
      */
     public function index(Request $request)
     {
-        $immobile = new Immobile();
-        $immobile->id = 1;
-        return view("Home/index", ["immobile" => $immobile]);
+        $immobiles = Immobile::all();
+        return view("Home/index", ["immobiles" => $immobiles]);
     }
 
     /**
@@ -60,14 +59,18 @@ class ImmobileController extends Controller
         $immobile->save();
         // $immobile->addAddress();
         $immobile->addRooms($request->rooms_immobile);
-        $immobile->addImage($request->file('image'));
-        // $immobile->addfurniture($request->rooms_immobile);
-        // $furnitures = explode(",", $request->coveniences_immobile);
-
+        $immobile->addFurniture($request->coveniences_immobile);
         // Upload image
-        if ($request->file('image')) {
-            
+        for ($i = 0; $i < count($request->allFiles()['images']); $i++){
+            $file = $request->allFiles()['images'][$i];
+
+            $immobile_image = new ImageImmobile();
+            $immobile_image->path_image = $file->store('user_'.auth()->user()->id.'/immobile_'.$immobile->id);
+            $immobile_image->immobile_id = $immobile->id;
+            $immobile_image->save();
+            unset($immobile_image);
         }
+        return view("Immobile/show");
     }
 
     /**
@@ -78,6 +81,7 @@ class ImmobileController extends Controller
      */
     public function show(Immobile $immobile)
     {
+
         return view("Immobile/show");
     }
 

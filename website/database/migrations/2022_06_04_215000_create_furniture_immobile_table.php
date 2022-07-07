@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('furniture_immobile', function (Blueprint $table) {
+        Schema::create('furniture_immobiles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('immobile_id')->references('id')->on('immobiles');
             $table->foreignId('furniture_id')->references('id')->on('furniture');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('furniture_immobile');
+        Schema::dropIfExists('furniture_immobiles');
     }
 };

@@ -4,7 +4,7 @@
 <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.5s" data-wow-delay="0s">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{route("home")}}">
+            <a class="navbar-brand" href="{{ route('home') }}">
                 <div class="d-flex justify-content-start align-items-center ">
                     <div>
                         <i class="fa-solid fa-map-location-dot fa-3x"></i>
@@ -24,40 +24,40 @@
 
                     <li class="nav-item dropdown  nav-item">
                         <input type="text" name="response_where"
-                            class="nav-link dropdown-toggle border_radius button_header size_animate" href="#" id="navbar_where"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            placeholder=" Para onde?"
+                            class="nav-link dropdown-toggle border_radius button_header size_animate" href="#"
+                            id="navbar_where" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" placeholder=" Para onde?"
                             value="@if (!empty($where)) {{ $where }} @endif" />
-                        <div class="dropdown-menu dropdown-menu-center" id="dropdown-menu-where" aria-labelledby="navbarDropdown"
-                            style="width: 500px;">
+                        <div class="dropdown-menu dropdown-menu-center" id="dropdown-menu-where"
+                            aria-labelledby="navbarDropdown" style="width: 500px;">
                             <div class="d-flex images_dropdown_where">
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Litoral Catarinense">
-                                        <img src="{{ asset('images/header/imagem_01.jpg') }}"
-                                            class="img-thumbnail" alt="">
+                                        <img src="{{ asset('images/header/imagem_01.jpg') }}" class="img-thumbnail"
+                                            alt="">
                                         <figcaption class="text-center">Litoral Catarinese</figcaption>
                                     </figure>
                                 </div>
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Vaje do itajai">
-                                        <img src="{{ asset('images/header/imagem_02.jpg') }}"
-                                            class="img-thumbnail" alt="">
+                                        <img src="{{ asset('images/header/imagem_02.jpg') }}" class="img-thumbnail"
+                                            alt="">
                                         <figcaption class="text-center">Vaje do itajai</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Rio dos cedros">
-                                        <img src="{{ asset('images/header/imagem_03.jpg') }}"
-                                            class="img-thumbnail" alt="">
+                                        <img src="{{ asset('images/header/imagem_03.jpg') }}" class="img-thumbnail"
+                                            alt="">
                                         <figcaption class="text-center">Rio dos cedros</figcaption>
                                     </figure>
                                 </div>
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Pomerode">
-                                        <img src="{{ asset('images/header/imagem_04.jpg') }}"
-                                            class="img-thumbnail" alt="">
+                                        <img src="{{ asset('images/header/imagem_04.jpg') }}" class="img-thumbnail"
+                                            alt="">
                                         <figcaption class="text-center">Pomerode</figcaption>
                                     </figure>
                                 </div>
@@ -66,24 +66,25 @@
                     </li>
                     <li class="nav-item dropdown  nav-item">
                         <input type="text" name="response_when"
-                            class="nav-link dropdown-toggle border_radius button_header size_animate" href="#" id="navbar_when"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            placeholder=" Quando?" />
+                            class="nav-link dropdown-toggle border_radius button_header size_animate" href="#"
+                            id="navbar_when" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" placeholder=" Quando?" />
 
-                        <div class="dropdown-menu dropdown-menu-center" id="dropdown-menu-when"aria-labelledby="navbarDropdown">
-                            <div class = "col-12 d-flex">
-                            <div id='calendar1' class="col-6"></div>
-                            <div id='calendar2' class="col-6"></div>
+                        <div class="dropdown-menu dropdown-menu-center"
+                            id="dropdown-menu-when"aria-labelledby="navbarDropdown">
+                            <div class="col-12 d-flex">
+                                <div id='calendar1' class="col-6"></div>
+                                <div id='calendar2' class="col-6"></div>
                             </div>
                         </div>
                     </li>
                     <li class="nav-item dropdown size_animate nav-item">
                         <input type="text" name="response_people"
-                            class="nav-link dropdown-toggle border_radius button_header" href="#" id="navbar_people"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            placeholder=" Quantas pessoas?" />
-                        <div class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdown" id="dropdown-menu-people"
-                            style="width: 275px;">
+                            class="nav-link dropdown-toggle border_radius button_header" href="#"
+                            id="navbar_people" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" placeholder=" Quantas pessoas?" />
+                        <div class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdown"
+                            id="dropdown-menu-people" style="width: 275px;">
                             <div class="d-flex">
                                 <div class=" col-sm-6">
                                     <p class="dropdown_title_people">Adultos</p>
@@ -159,26 +160,30 @@
                         <i class="fa-solid fa-circle-user fa-xl"></i>
                     </div>
                     <div class="dropdown-menu" id="dropdown-config" aria-labelledby="navbarDropdown">
-                        <div class=" images_dropdown_where" >
-                            @if(empty(auth()->user()->name))
-                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_register"> Cadastrar-se</a> 
-                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_login">   Efetue login</a>
+                        <div class=" images_dropdown_where">
+                            @if (empty(auth()->user()->name))
+                                <a class="dropdown_title_config dropdown-item "data-toggle="modal"
+                                    data-target="#modal_register"> Cadastrar-se</a>
+                                <a class="dropdown_title_config dropdown-item "data-toggle="modal"
+                                    data-target="#modal_login"> Efetue login</a>
                             @else
-                            <a class="dropdown_title_config dropdown-item "data-toggle="modal" data-target="#modal_cadastro">Bem vindo  {{auth()->user()->name}}</a> 
-                           @endif
+                                <a class="dropdown_title_config dropdown-item "data-toggle="modal"
+                                    data-target="#modal_cadastro">Bem vindo {{ auth()->user()->name }}</a>
+                            @endif
                             <div class="dropdown-divider"></div>
 
                             <a class="dropdown_title_config dropdown-item"> Duvidas frequentes</a>
-                            <a class="dropdown_title_config dropdown-item" href= ""> Ajuda</a>
-                            @if(!empty(auth()->user()->name))
-                            <a class="dropdown_title_config dropdown-item" href= "{{route("logout")}}"> Logout</a>
+                            <a class="dropdown_title_config dropdown-item" href=""> Ajuda</a>
+                            @if (!empty(auth()->user()->name))
+                                <a class="dropdown_title_config dropdown-item" href="{{ route('logout') }}">
+                                    Logout</a>
                             @endif
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div><a href = "{{route("immobile.create")}}" class ="btn btn-danger" >Cadastre seu imovel</a></div>
+            <div><a href="{{ route('immobile.create') }}" class="btn btn-danger">Cadastre seu imovel</a></div>
         </nav>
     </div>
 
@@ -199,4 +204,16 @@
             calendar2.render();
         });
     </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete&language=nl&output=json&key=AIzaSyBHO3zyVXKQHHS4E8MGc00YQN0Tbgajpb0"
+        async defer>
+    </script>
+   
+   <script type="text/javascript">
+   function initAutocomplete() {
+   var address = document.getElementById('navbar_where');
+   var autocomplete = new google.maps.places.Autocomplete(address);
+   }
+   </script>
+
 </header>

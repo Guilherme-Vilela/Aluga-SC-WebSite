@@ -94,64 +94,15 @@
                                         </div>
                                         <div class="col-12 d-flex justify-content-center mt-2">
                                             <div class="row">
+                                                @foreach($furnitures as $furniture)
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Espaços de jogos" value_id="0">
-                                                        <span><b>Espaços de jogos</b><i
-                                                                class="fa-solid fa-chess-board"></i></span>
+                                                        value="{{$furniture->id}}">
+                                                        <span><b>{{$furniture->name}}</b></span>
                                                     </button>
                                                 </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Piscina" value_id="1">
-                                                        <span><b>Piscina</b><i class="fa-solid fa-water-ladder"></i></span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Churrasqueira" value_id="2">
-                                                        <span><b>Churrasqueira</b><i
-                                                                class="fa-solid fa-fire-burner"></i></span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Jardim" value_id="3">
-                                                        <span><b>Jardim</b><i class="fa-solid fa-tree"></i></span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Banheira" value_id="4">
-                                                        <span><b>Banheira</b><i class="fa-solid fa-bath"></i></span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Wi-fi" value_id="5">
-                                                        <span><b>Wi-fi</b><i class="fa-solid fa-wifi"></i></span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="TV" value_id="6">
-                                                        <span><b>TV</b><i class="fa-solid fa-tv"></i></span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_convenience"
-                                                        value="Garagem" value_id="7">
-                                                        <span><b>Garagem</b><i class="fa-solid fa-warehouse"></i></span>
-                                                    </button>
-                                                </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -165,48 +116,15 @@
                                         </div>
                                         <div class="col-12 d-flex justify-content-center mt-2">
                                             <div class="row">
+                                                @foreach($rooms as $room)
                                                 <div class="col-4 d-flex justify-content-center mt-2">
                                                     <button
                                                         class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Sala de estar" value_id="0">
-                                                        <span><b>Sala de estar</b></span>
+                                                        value="{{$room->id}}">
+                                                        <span><b>{{$room->name}}</b></span>
                                                     </button>
                                                 </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Cozinha" value_id="1">
-                                                        <span><b>Cozinha</b></span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Área externa" value_id="2">
-                                                        <span><b>Área externa</b></span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Garagem" value_id="3">
-                                                        <span><b>Garagem</b></span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Área para churrasco" value_id="4">
-                                                        <span><b>Área para churrasco</b></i></span>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 d-flex justify-content-center mt-2">
-                                                    <button
-                                                        class=" d-flex justify-content-between align-items-center option_rooms"
-                                                        value="Lavanderia" value_id="5">
-                                                        <span><b>Lavanderia</b></span>
-                                                    </button>
-                                                </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -235,7 +153,7 @@
                                             @csrf
                                             <div class="col-12 d-flex justify-content-center m-2">
                                                 <label>Imagens da sua residencia </label>
-                                                <input type="file" id="image_immobile" name = "image" class="form-control">
+                                                <input type="file" id="image_immobile" name = "images[]" class="form-control" multiple>
                                             </div>
                                             <input id="input_type_immobile" type=text name="type_immobile"
                                                 class="d-none">
@@ -439,11 +357,11 @@
 
         function validate_convenience_immobile(position) {
             let coveniences = [
-                ["covenience", "0"]
+                ["covenience"]
             ];
             $(".option_convenience").each(function(index) {
                 if ($(this).attr("select") == "selected") {
-                    let convenience = [$(this).attr("value"), $(this).attr("value_id")];
+                    let convenience = [$(this).attr("value")];
                     coveniences.push(convenience);
                 }
             });
@@ -453,11 +371,11 @@
 
         function validate_room_immobile(position) {
             let rooms = [
-                ["room", "0"]
+                ["room"]
             ];
             $(".option_rooms").each(function(index) {
                 if ($(this).attr("select") == "selected") {
-                    let room = [$(this).attr("value"), $(this).attr("value_id")];
+                    let room = [$(this).attr("value")];
                     rooms.push(room);
                 }
             });

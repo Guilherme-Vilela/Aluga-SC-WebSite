@@ -21,7 +21,7 @@ class Immobile extends Model
     ];
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,"id","user_id");
     }
     public function immobileAdress()
     {
@@ -39,21 +39,33 @@ class Immobile extends Model
     {
         return $this->hasMany(Schedule::class);
     }
-    public function image_immobile()
+    public function images()
     {
-        return $this->hasMany(ImageImmobile::class);
+        
+        return $this->hasMany(ImageImmobile::class,"immobile_id","id");
     }
     public function addRooms($rooms)
     {
         $rooms = explode(",", $rooms);
-        for ($i = 2; $i < count($rooms); $i++) {
-            if ($i % 2) {
-                $room = new RoomImmobile();
-                $room->immobile_id = $this->id;
-                $room->room_id = $rooms[$i];
-                $room->save();
-                unset($room);
-            }
+        for ($i = 1; $i < count($rooms); $i++) {
+            $room = new RoomImmobile();
+            $room->immobile_id = $this->id;
+            $room->room_id = $rooms[$i];
+            $room->quantity = 1;
+            $room->save();
+            unset($room);
+        }
+        return true;
+    }
+    public function addFurniture($furnitures)
+    {
+        $furnitures = explode(",", $furnitures);
+        for ($i = 1; $i < count($furnitures); $i++) {
+            $furniture = new FurnitureImmobile();
+            $furniture->immobile_id = $this->id;
+            $furniture->furniture_id = $furnitures[$i];
+            $furniture->save();
+            unset($furniture);
         }
         return true;
     }
@@ -71,16 +83,5 @@ class Immobile extends Model
         $immobile_address->save();
         return true;
     }
-    public function addImage($file_image)
-    {
-        $image = new ImageImmobile();
-        $image->path_image = 'image_users/user_' . auth()->user()->id . '/immobile_' . $this->id;
-        $image->immobile_id = $this->id;
-        $image->save();
-
-        $file = $file_image;
-        $filename = "room_" . $file->getClientOriginalName();
-        $file->move(public_path('image_users/user_' . auth()->user()->id . '/immobile_' . $this->id), $filename);
-        $data['image'] = $filename;
-    }
+   
 }

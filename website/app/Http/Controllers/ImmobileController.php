@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Furniture;
 use App\Models\Immobile;
-use App\Models\User;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 class ImmobileController extends Controller
@@ -27,7 +28,7 @@ class ImmobileController extends Controller
      */
     public function create()
     {
-        //
+        return view("Immobile/create");
     }
 
     /**
@@ -38,7 +39,15 @@ class ImmobileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $immobile = new immobile();
+        $immobile->name = $request->input_name_immobile;
+        $immobile->capacity= $request->capacity;
+        $immobile->status = $request->status;
+        $immobile->description = $request->description;
+        $immobile->user_id = $request->user_id;
+        dd($request);
+        // 
+
     }
 
     /**
@@ -49,7 +58,7 @@ class ImmobileController extends Controller
      */
     public function show(Immobile $immobile)
     {
-        return view("Immobile/index");
+        return view("Immobile/show");
     }
 
     /**

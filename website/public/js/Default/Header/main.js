@@ -54,3 +54,4 @@ $(document).ready(function(){
       $("#modal_login").modal("show");
   });
   });
+  

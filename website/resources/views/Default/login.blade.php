@@ -16,13 +16,13 @@
                         @csrf
                         <div class="form-group row col-sm-12 ">
                             <label class=""><b>Email</b></label>
-                            <input type="email" class="input_login" id="" name="email" placeholder=""
-                                required>
+                            <input type="email" class="input_login" name="email" placeholder=""
+                                autocomplete="username" required>
                         </div>
                         <div class="form-group row col-sm-12 ">
                             <label class=""><b>Senha</b></label>
-                            <input type="password" class="input_login" id="" name="password" placeholder=""
-                                required>
+                            <input type="password" class="input_login" autocomplete="current-password" name="password"
+                                placeholder="" required>
                             <div class="col-sm-12 text-right">
                                 <a href="#" class="loss_password">Esqueci minha senha</a>
                             </div>
@@ -33,7 +33,8 @@
                                 <button type="submit" class="btn btn-dark btn_login">Entrar</button>
                             </div>
                             <div class="col-sm-10 mt-5">
-                                <a  id ="btn_login_register" class="txt-center ls-login-signup" style = "cursor: pointer;">Não possui cadastro? <b>Cadastre-se
+                                <a id="btn_login_register" class="txt-center ls-login-signup"
+                                    style="cursor: pointer;">Não possui cadastro? <b>Cadastre-se
                                         aqui</b></a>
                             </div>
                         </div>

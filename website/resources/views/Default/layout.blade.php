@@ -11,8 +11,8 @@
 <!-- CSS only -->
 <link rel="stylesheet" href="{{asset("css/Bootstrap/bootstrap.css")}}">
 <link rel="stylesheet" href="{{asset("css/main.css")}}" >
-<script  src="{{'js/Jquery/jquery.js'}}"></script>
-<script  src="{{'js/Bootstrap/bootstrap.js'}}" ></script>
+<script  src="{{asset('js/Jquery/jquery.js')}}"></script>
+<script  src="{{asset('js/Bootstrap/bootstrap.js')}}" ></script>
 
 <!-- JavaScript SweetAlert2 -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -28,6 +28,6 @@
 @include('Default.register')
 </body>
 
-<script type="text/javascript" src="{{'js/Default/Header/main.js'}}"></script>
+<script type="text/javascript" src="{{asset('js/Default/Header/main.js')}}"></script>
 
 </html>

@@ -33,6 +33,7 @@ class ImmobileController extends Controller
     {   
         $rooms = Room::all();
         $furnitures = Furniture::all();
+        
         return view("Immobile/create", ['rooms'=>$rooms, "furnitures"=>$furnitures]);
     }
 

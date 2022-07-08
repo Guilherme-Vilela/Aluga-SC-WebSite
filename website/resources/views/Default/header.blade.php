@@ -1,6 +1,7 @@
 <link href='{{ asset('js/calendar/lib/main.css') }}' rel='stylesheet' />
 <script src='{{ asset('js/calendar/lib/main.js') }}'></script>
 <!-- ***** Header Area Start ***** -->
+
 <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.5s" data-wow-delay="0s">
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -206,14 +207,32 @@
     </script>
     <script
         src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete&language=nl&output=json&key=AIzaSyBHO3zyVXKQHHS4E8MGc00YQN0Tbgajpb0"
-        async defer>
-    </script>
-   
-   <script type="text/javascript">
-   function initAutocomplete() {
-   var address = document.getElementById('navbar_where');
-   var autocomplete = new google.maps.places.Autocomplete(address);
-   }
-   </script>
+        async defer></script>
 
+    <script type="text/javascript">
+        function initAutocomplete() {
+            var address = document.getElementById('navbar_where');
+            var autocomplete = new google.maps.places.Autocomplete(address);
+        }
+    </script>
+    @if (session()->has('mensage') && session()->get('mensage.function') == 'login')
+        <script>
+           $( document ).ready(function() {
+            let text = "{{session()->get('mensage.title')}}".trim();
+            $("#mensage_login").text(text);
+             $("#modal_login").modal('show');
+            // Swal.fire({
+            //     title: '{{ session()->get('mensage.title') }}',
+            //     text: '{{ session()->get('mensage.text') }}',
+            //     icon: '{{ session()->get('mensage.icon') }}',
+            // }).then((result) => {
+            //     /* Read more about isConfirmed, isDenied below */
+            //     if (result.isConfirmed) {
+            //     }
+            // })
+            })
+        </script>
+
+        {{ session()->forget('mensage') }}
+    @endif
 </header>

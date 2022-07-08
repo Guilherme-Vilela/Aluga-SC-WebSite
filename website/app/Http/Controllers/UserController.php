@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -17,6 +18,7 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            session()->put(['mensage' =>['title'=>'Bem vindo '.auth()->user()->name,'text'=> "", 'icon' => ""]]);
             return redirect()->route('home');
         }
         return back()->withErrors([
@@ -37,6 +39,7 @@ class UserController extends Controller
         ]);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            session()->put(['mensage' =>['title'=>'Cadastro realizado com sucesso','text'=> "Bem vindo".auth()->user()->name, 'icon' => "success"]]);
             return redirect()->route('home');
         }
         return back()->withErrors([

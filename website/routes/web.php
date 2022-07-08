@@ -23,7 +23,8 @@ Route::get('/', 'ImmobileController@index')->name("home");
 Route::post('/login','UserController@login')->name("login");
 Route::get('/logout','UserController@logout')->name("logout");
 Route::post('/register','UserController@register')->name("register");
-Route::Resource('/imovel',"ImmobileController")->middleware('auth')->names("immobile")->parameters(['imovel'=>'immobile']);
+Route::get('/imovel/cadastro',"ImmobileController@create")->middleware('auth')->name("immobile.create");
+Route::Resource('/imovel',"ImmobileController", ['except'=> ['create','edit']])->names("immobile")->parameters(['imovel'=>'immobile']);
 
 
 

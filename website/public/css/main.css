@@ -306,7 +306,7 @@ h11 {
 
 .panel-heading{
     font-size:150%;
-=======
+}
 .right_side_create_immobile{
     background-image: linear-gradient(red, rgb(23, 0, 128));
     height:85vh;
@@ -337,5 +337,5 @@ h11 {
 }
 .cursor-pointer{
     cursor:pointer;
->>>>>>> e29c2f79f8ec8dc326835e54ef38d1deb12cdb71
+
 }

@@ -1,19 +1,19 @@
 function limpa_formulario_cep() {
     //Limpa valores do formulário de cep.
-    document.getElementById('rua').value=("");
-    document.getElementById('bairro').value=("");
-    document.getElementById('cidade').value=("");
-    document.getElementById('estado').value=("");
+    document.getElementById('road').value=("");
+    document.getElementById('district').value=("");
+    document.getElementById('city').value=("");
+    document.getElementById('state').value=("");
     
 }
 
 function meu_callback(conteudo) {
 if (!("erro" in conteudo)) {
     //Atualiza os campos com os valores.
-    document.getElementById('rua').value=(conteudo.logradouro);
-    document.getElementById('bairro').value=(conteudo.bairro);
-    document.getElementById('cidade').value=(conteudo.localidade);
-    document.getElementById('estado').value=(conteudo.uf);
+    document.getElementById('road').value=(conteudo.logradouro);
+    document.getElementById('district').value=(conteudo.district);
+    document.getElementById('city').value=(conteudo.localidade);
+    document.getElementById('state').value=(conteudo.uf);
 } //end if.
 else {
     //CEP não Encontrado.
@@ -38,10 +38,10 @@ if (cep !== "" && cep.length == 8) {
     if(validacep.test(cep)) {
 
         //Preenche os campos com "..." enquanto consulta webservice.
-        document.getElementById('rua').value="...";
-        document.getElementById('bairro').value="...";
-        document.getElementById('cidade').value="...";
-        document.getElementById('estado').value="...";
+        document.getElementById('road').value="...";
+        document.getElementById('district').value="...";
+        document.getElementById('city').value="...";
+        document.getElementById('state').value="...";
 
         //Cria um elemento javascript.
         var script = document.createElement('script');
@@ -98,39 +98,48 @@ idade--;
 return idade;
 } 
 
+function validarCPF(cpf) {
+    // cpf.length == 11;
+    cpf = cpf.replace(/[^\d]+/g, '')
+    if (cpf.length == 11) {
+        // Elimina CPFs invalidos conhecidos	
+        if (cpf.length != 11 ||
+            cpf == "00000000000" ||
+            cpf == "11111111111" ||
+            cpf == "22222222222" ||
+            cpf == "33333333333" ||
+            cpf == "44444444444" ||
+            cpf == "55555555555" ||
+            cpf == "66666666666" ||
+            cpf == "77777777777" ||
+            cpf == "88888888888" ||
+            cpf == "99999999999")
+            alert("CPF invalido");
 
-function exibe(i) {
-
-
-
-document.getElementById(i).readOnly= true;
-
-
-
-
-}
-
-function desabilita(i){
-
-document.getElementById(i).disabled = true;    
-}
-function habilita(i)
-{
-document.getElementById(i).disabled = false;
-}
-
-
-function showhide()
-{
-var div = document.getElementById("newpost");
-
-if(idade()>=18){
-
-div.style.display = "none";
-}
-else if(idade()<18) {
-div.style.display = "inline";
-}
-
+        // Valida 1o digito	
+        add = 0;
+        for (i = 0; i < 9; i++)
+            add += parseInt(cpf.charAt(i)) * (10 - i);
+        rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        if (rev != parseInt(cpf.charAt(9)))
+            alert("CPF invalido");
+        return false;
+        // Valida 2o digito	
+        add = 0;
+        for (i = 0; i < 10; i++)
+            add += parseInt(cpf.charAt(i)) * (11 - i);
+        rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11) {
+            rev = 0;
+        }
+        if (rev != parseInt(cpf.charAt(10))) {
+            alert("CPF invalido");
+            return false;
+        }
+        alert("CPF valido");
+        return true;
+    }
 }
 

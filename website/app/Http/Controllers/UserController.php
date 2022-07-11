@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        $user = User::find(auth()->user()->id);
+        return view('User/register_complete',['user'=>$user]);
+    }
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -43,7 +48,7 @@ class UserController extends Controller
             return redirect()->route('home');
         }
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'mensage' => 'Email ou senha invalidos',
         ])->onlyInput('email');
     }
 
@@ -54,6 +59,6 @@ class UserController extends Controller
     }
     public function update()
     {
-        return view('User/register_complete');
+       
     }
 }

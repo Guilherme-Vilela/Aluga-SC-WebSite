@@ -1,5 +1,3 @@
-<link href='{{ asset('js/calendar/lib/main.css') }}' rel='stylesheet' />
-<script src='{{ asset('js/calendar/lib/main.js') }}'></script>
 <!-- ***** Header Area Start ***** -->
 
 <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.5s" data-wow-delay="0s">
@@ -42,7 +40,7 @@
                                 </div>
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure class="image_where" data-target="Vaje do itajai">
+                                    <figure class="image_where" data-target="Vale do itajai">
                                         <img src="{{ asset('images/header/imagem_02.jpg') }}" class="img-thumbnail"
                                             alt="">
                                         <figcaption class="text-center">Vaje do itajai</figcaption>
@@ -66,18 +64,10 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown  nav-item">
-                        <input type="text" name="response_when"
+                        <input type="text" name="daterange" value="12/07/2022 - 12/07/2022"
                             class="nav-link dropdown-toggle border_radius button_header size_animate" href="#"
                             id="navbar_when" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false" placeholder=" Quando?" />
-
-                        <div class="dropdown-menu dropdown-menu-center"
-                            id="dropdown-menu-when"aria-labelledby="navbarDropdown">
-                            <div class="col-12 d-flex">
-                                <div id='calendar1' class="col-6"></div>
-                                <div id='calendar2' class="col-6"></div>
-                            </div>
-                        </div>
                     </li>
                     <li class="nav-item dropdown size_animate nav-item">
                         <input type="text" name="response_people"
@@ -176,8 +166,11 @@
                             <a class="dropdown_title_config dropdown-item"> Duvidas frequentes</a>
                             <a class="dropdown_title_config dropdown-item" href=""> Ajuda</a>
                             @if (!empty(auth()->user()->name))
-                            <a class="dropdown_title_config dropdown-item" href="{{ route('user.index') }}">
-                                Meus dados</a>
+                                <a class="dropdown_title_config dropdown-item" href="{{ route('user.index') }}">
+                                    Meus dados</a>
+                                <a class="dropdown_title_config dropdown-item"
+                                    href="{{ route('immobile.index') }}">
+                                    Meus Imoveis</a>
                                 <a class="dropdown_title_config dropdown-item" href="{{ route('logout') }}">
                                     Logout</a>
                             @endif
@@ -189,22 +182,47 @@
             <div><a href="{{ route('immobile.create') }}" class="btn btn-danger">Cadastre seu imovel</a></div>
         </nav>
     </div>
-
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar1');
-            var calendar1 = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth'
-            });
-            calendar1.render();
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar2');
-            var calendar2 = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth'
-            });
-            calendar2.render();
+        $('#navbar_when').daterangepicker({
+            "locale": {
+                "format":"DD/MM/YYYY",
+                "separator": " - ",
+                "applyLabel": "Aplicar",
+                "cancelLabel": "Cancelar",
+                "fromLabel": "From",
+                "toLabel": "To",
+                "customRangeLabel": "Custom",
+                "weekLabel": "W",
+                "daysOfWeek": [
+                    "dom",
+                    "seg",
+                    "terç",
+                    "qua",
+                    "qui",
+                    "sex",
+                    "Sáb"
+                ],
+                "monthNames": [
+                    "Janeiro",
+                    "Fevereiro",
+                    "Março",
+                    "Abril",
+                    "Maio",
+                    "Junho",
+                    "Julho",
+                    "Agosto",
+                    "Setembro",
+                    "Outubro",
+                    "Novembro",
+                    "Dezembro"
+                ],
+                "firstDay": 1
+            },
+            "startDate": "07/07/2022",
+            "endDate": "08/07/2022"
+        }, function(start, end, label) {
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format(
+                'YYYY-MM-DD') + ' (predefined range: ' + label + ')');
         });
     </script>
     <script
@@ -219,22 +237,27 @@
     </script>
     @if (session()->has('mensage') && session()->get('mensage.function') == 'login')
         <script>
-           $( document ).ready(function() {
-            let text = "{{session()->get('mensage.title')}}".trim();
-            $("#mensage_login").text(text);
-             $("#modal_login").modal('show');
-            // Swal.fire({
-            //     title: '{{ session()->get('mensage.title') }}',
-            //     text: '{{ session()->get('mensage.text') }}',
-            //     icon: '{{ session()->get('mensage.icon') }}',
-            // }).then((result) => {
-            //     /* Read more about isConfirmed, isDenied below */
-            //     if (result.isConfirmed) {
-            //     }
-            // })
+            $(document).ready(function() {
+                let text = "{{ session()->get('mensage.title') }}".trim();
+                $("#mensage_login").text(text);
+                $("#modal_login").modal('show');
+
             })
         </script>
-
+    @endif
+    @if (session()->has('mensage') && session()->get('mensage.function') == 'alert')
+        <script>
+            $(document).ready(function() {
+                Swal.fire({
+                    title: '{{ session()->get('mensage.title') }}',
+                    text: '{{ session()->get('mensage.text') }}',
+                    icon: '{{ session()->get('mensage.icon') }}',
+                }).then((result) => {
+                    if (result.isConfirmed) {}
+                })
+            })
+        </script>
         {{ session()->forget('mensage') }}
     @endif
+
 </header>

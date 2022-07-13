@@ -2,9 +2,8 @@
 @section('content')
     <main class="container mt-5">
         <div class="row">
-          
+
             @foreach ($immobiles as $immobile)
-            
                 <article class="col-lg-3 mt-3 mb-3" style="">
                     <div class="image_content ">
                         <a class="carousel-control-prev" value="{{ $immobile['id'] }}" role="button" data-slide="prev">
@@ -31,10 +30,11 @@
                                         {{ $i++ }}
                                         @if ($i == 1)
                                             <div class="carousel-item active">
-                                        @else
-                                            <div class="carousel-item ">
+                                            @else
+                                                <div class="carousel-item ">
                                         @endif
-                                        <img class="d-block" style="height:200px;" src="{{ url('storage/'.$image->path_image)}}">
+                                        <img class="d-block" style="height:200px;"
+                                            src="{{ url('storage/' . $image->path_image) }}">
                                 </div>
             @endforeach
         </div>
@@ -43,14 +43,14 @@
         </div>
         <div class="texto" style="padding: 0px !impotant;">
             <div class="d-flex justify-content-star">
-                <a href="" class="col-8 p-0"><strong>Timbó, Vaje do itajai</strong></a>
+                <a href="" class="col-8 p-0"><strong>Timbó, Vale do itajai</strong></a>
                 <div class="col-4 p-0 text-right">
                     <a href="" class="p-0 text-right">5 <i class="fa-solid fa-star text-right p-0"></i></a>
                 </div>
             </div>
-            <a href="" class="col-12 p-0 ">Destaque por sua hospitalidade</a>
-            <a href="" class="col-12 p-0">Julho 05 - 22 </a>
-            <a href="" class="col-12 p-0">R$ 500,00 / Noite</a>
+            <a href="" class="col-12 p-0 ">{{ $immobile['name'] }}</a>
+            <br>
+            <a href="" class="col-12 p-0">R${{ $immobile['value'] }}/Noite</a>
         </div>
         </article>
         @endforeach

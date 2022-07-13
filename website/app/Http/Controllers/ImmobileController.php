@@ -119,4 +119,7 @@ class ImmobileController extends Controller
     {
         //
     }
+    public function listimmobiles(){
+
+    }
 }

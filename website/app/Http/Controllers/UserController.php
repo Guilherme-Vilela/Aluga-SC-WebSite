@@ -23,11 +23,11 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            session()->put(['mensage' =>['title'=>'Bem vindo '.auth()->user()->name,'text'=> "", 'icon' => ""]]);
+            session()->put(['mensage' =>['title'=>'Bem vindo '.auth()->user()->name,'text'=> "", 'icon' => "sucess", "function" => "alert"]]);
             return redirect()->route('home');
         }
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Email ou senha invalidos',
         ])->onlyInput('email');
     }
 
@@ -44,7 +44,7 @@ class UserController extends Controller
         ]);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            session()->put(['mensage' =>['title'=>'Cadastro realizado com sucesso','text'=> "Bem vindo".auth()->user()->name, 'icon' => "success"]]);
+            session()->put(['mensage' =>['title'=>'Cadastro realizado com sucesso','text'=> "Bem vindo".auth()->user()->name, 'icon' => "success","function" => "alert"]]);
             return redirect()->route('home');
         }
         return back()->withErrors([

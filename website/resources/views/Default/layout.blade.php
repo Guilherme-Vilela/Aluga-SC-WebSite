@@ -11,8 +11,12 @@
 <!-- CSS only -->
 <link rel="stylesheet" href="{{asset("css/Bootstrap/bootstrap.css")}}">
 <link rel="stylesheet" href="{{asset("css/main.css")}}" >
+<link href='{{ asset('css/calendar/daterangepicker.css') }}' rel='stylesheet' />
+
 <script  src="{{asset('js/Jquery/jquery.js')}}"></script>
 <script  src="{{asset('js/Bootstrap/bootstrap.js')}}" ></script>
+<script  src='{{asset('js/calendar/moment.min.js') }}'></script>
+<script  src='{{asset('js/calendar/daterangepicker.js') }}'></script>
 
 <!-- JavaScript SweetAlert2 -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

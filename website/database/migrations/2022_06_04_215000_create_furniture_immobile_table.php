@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('furniture_immobiles', function (Blueprint $table) {
             $table->id();
+            $table->integer("quantity");
             $table->foreignId('immobile_id')->references('id')->on('immobiles');
             $table->foreignId('furniture_id')->references('id')->on('furniture');
             $table->timestamps();

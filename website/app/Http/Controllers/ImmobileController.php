@@ -31,8 +31,8 @@ class ImmobileController extends Controller
      */
     public function create()
     {   
-        $rooms = Room::all();
-        $furnitures = Furniture::all();
+        $rooms = Room::where('status','comodo')->get();
+        $furnitures = Furniture::where('status','conveniencia')->get();
         
         return view("Immobile/create", ['rooms'=>$rooms, "furnitures"=>$furnitures]);
     }
@@ -44,34 +44,65 @@ class ImmobileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
         //Save Immobille 
         $immobile = new immobile();
         $immobile->name = $request->name_immobile;
         $immobile->type = $request->type_immobile;
-        $immobile->capacity = 1;
+        $immobile->capacity =  $request->quantity_people;
         $immobile->user_id = $request->user_id;
-        $immobile->value =  $request->value_immobile;
-        $immobile->description = $request->description_immobile;
-        $immobile->rules = $request->rules_immobile;
+        $immobile->value =  str_replace(",",'.',str_replace('.','',$request->value_immobile));
+        $immobile->description = $request->description_immobile."";
+        $immobile->rules = $request->rules_immobile."";
         $immobile->status = "ativo";
         $immobile->user_id = auth()->user()->id;
         $immobile->image = "";
         $immobile->save();
-        // $immobile->addAddress();
-        $immobile->addRooms($request->rooms_immobile);
-        $immobile->addFurniture($request->coveniences_immobile);
+        
+        $address = [
+            "road" => $request->road,
+            "city"=> $request->city,
+            "district"=> $request->district,
+            "state"=> $request->state,
+            "cep"=> $request->cep,
+            "number"=> $request->number,
+            "complement"=> $request->complement,
+        ];
+
+        $room = [
+            'bathrooms' => $request->bathrooms_immobile,
+            'bedrooms' => $request->bathrooms_immobile,
+        ];
+        $furniture = [
+            'double_bed' => $request->double_bed,
+            'single_bed' => $request->single_bed,
+            'couch' =>$request->couch,
+        ];
+
+        $immobile->addAddress($address);
+        $immobile->addRooms($room,$request->rooms_immobile);
+        $immobile->addFurniture($furniture,$request->coveniences_immobile);
         // Upload image
+
+        $file = $request->allFiles()['image_main'];
+        $immobile_image = new ImageImmobile();
+        $immobile_image->path_image = $file->store('public/user_'.auth()->user()->id.'/immobile_'.$immobile->id);
+        $immobile_image->immobile_id = $immobile->id;
+        $immobile_image->path_image =  substr($immobile_image->path_image,7);
+        $immobile_image->save(); 
+
+        unset($immobile_image);
         for ($i = 0; $i < count($request->allFiles()['images']); $i++){
             $file = $request->allFiles()['images'][$i];
 
             $immobile_image = new ImageImmobile();
-            $immobile_image->path_image = $file->store('user_'.auth()->user()->id.'/immobile_'.$immobile->id);
+            $immobile_image->path_image = $file->store('public/user_'.auth()->user()->id.'/immobile_'.$immobile->id);
             $immobile_image->immobile_id = $immobile->id;
-            $immobile_image->save();
+            $immobile_image->path_image =  substr($immobile_image->path_image,7);
+            $immobile_image->save();    
             unset($immobile_image);
         }
-        return view("Immobile/show");
+        return view("Immobile/show",['immobile'=>$immobile]);
     }
 
     /**
@@ -83,7 +114,7 @@ class ImmobileController extends Controller
     public function show(Immobile $immobile)
     {
 
-        return view("Immobile/show");
+        return view("Immobile/show", ['immobile'=>$immobile]);
     }
 
     /**
@@ -94,7 +125,9 @@ class ImmobileController extends Controller
      */
     public function edit(Immobile $immobile)
     {
-        //
+        $rooms = Room::all();
+        $furnitures = Furniture::all();
+        return view("Immobile/edit", ['rooms'=>$rooms, "furnitures"=>$furnitures, 'immobile' => $immobile]);
     }
 
     /**
@@ -119,7 +152,8 @@ class ImmobileController extends Controller
     {
         //
     }
-    public function listimmobiles(){
-
+    public function myimmobile(){
+        $immobiles = Immobile::where('user_id',auth()->user()->id)->get();
+        return view("immobile/myproperty", ["immobiles" => $immobiles]);
     }
 }

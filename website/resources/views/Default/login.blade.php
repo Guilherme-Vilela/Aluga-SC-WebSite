@@ -33,6 +33,7 @@
                             <div class="col-sm-12 d-flex justify-content-center">
                                 <button type="submit" class="btn btn-dark btn_login">Entrar</button>
                             </div>
+                            <div class="g-signin2" data-onsuccess="onSignIn"></div>
                             <div class="col-sm-10 mt-5">
                                 <a id="btn_login_register" class="txt-center ls-login-signup"
                                     style="cursor: pointer;">Não possui cadastro? <b>Cadastre-se
@@ -50,4 +51,11 @@
 $('#modal_login').on('hidden.bs.modal', function (e) {
   $("#mensage_login").text("");
 })
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
 </script>

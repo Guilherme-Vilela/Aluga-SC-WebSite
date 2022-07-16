@@ -12,6 +12,7 @@ class FurnitureImmobile extends Model
     protected $fillable = [
         'immobile_id',
         'furtinure_id',
+        'quantity',
     ];
     public function furniture()
     {

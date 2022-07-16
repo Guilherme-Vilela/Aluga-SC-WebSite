@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('furniture', function (Blueprint $table) {
             $table->id();
             $table->String('name');
+            $table->String('icon')->nullable();
+            $table->String('status');
             $table->integer('capacity');
             $table->foreignId('room_id')->references('id')->on('rooms');
             $table->timestamps();

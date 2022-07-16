@@ -44,7 +44,7 @@ class UserController extends Controller
         ]);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            session()->put(['mensage' =>['title'=>'Cadastro realizado com sucesso','text'=> "Bem vindo".auth()->user()->name, 'icon' => "success","function" => "alert"]]);
+            session()->put(['mensage' =>['title'=>'Cadastro realizado com sucesso  ','text'=> "  Bem vindo  ".auth()->user()->name, 'icon' => "success","function" => "alert"]]);
             return redirect()->route('home');
         }
         return back()->withErrors([

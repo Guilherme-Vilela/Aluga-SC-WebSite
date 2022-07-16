@@ -163,13 +163,13 @@
                             @endif
                             <div class="dropdown-divider"></div>
 
-                            <a class="dropdown_title_config dropdown-item"> Duvidas frequentes</a>
-                            <a class="dropdown_title_config dropdown-item" href=""> Ajuda</a>
+                            {{-- <a class="dropdown_title_config dropdown-item"> Duvidas frequentes</a>
+                            <a class="dropdown_title_config dropdown-item" href=""> Ajuda</a> --}}
                             @if (!empty(auth()->user()->name))
                                 <a class="dropdown_title_config dropdown-item" href="{{ route('user.index') }}">
                                     Meus dados</a>
                                 <a class="dropdown_title_config dropdown-item"
-                                    href="{{ route('immobile.index') }}">
+                                    href="{{ route('immobile.my') }}">
                                     Meus Imoveis</a>
                                 <a class="dropdown_title_config dropdown-item" href="{{ route('logout') }}">
                                     Logout</a>

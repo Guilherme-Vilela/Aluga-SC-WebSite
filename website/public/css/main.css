@@ -309,8 +309,6 @@ h11 {
 }
 .right_side_create_immobile{
     background-image: linear-gradient(red, rgb(23, 0, 128));
-    height:85vh;
-    overflow: hidden;
 }
 .message_create_immobile{
     font-size:40px;
@@ -319,7 +317,7 @@ h11 {
 }
 .button_selection_type_immobile{
     width:40%;
-    height:100px;
+    height:100px !important;
     border-radius:15px;
     box-shadow: 1px 1px 1px #ccc;
     overflow: hidden;   
@@ -338,4 +336,22 @@ h11 {
 .cursor-pointer{
     cursor:pointer;
 
+}
+footer{
+    bottom: 0px;
+    width: 100%;
+}
+.badge_button{
+    height: 30px;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.option_convenience{
+   width: 50%;
+}
+.option_rooms{
+    width: 50%;
 }

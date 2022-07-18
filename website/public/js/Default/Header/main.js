@@ -27,11 +27,9 @@ $(document).ready(function(){
     $(".button-search").click(function(){
       let where     = "para_onde="+$("#navbar_where").val().trim()+"&";
       let adults    = "adultos="+$("#number_adults").text().trim()+ "&";
-      let children  = "criancas="+$("#number_children").text().trim()+ "&";
-      let pet       = "pets=" +$("#number_pets").text().trim()+ "&";
       let check_in  = "check_in="+$("#navbar_when").val().trim()+ "&";
       let check_out = "check_out="+$("#navbar_when").val().trim();
-      let url       = "/?"+where+adults+children+pet+check_in+check_out;
+      let url       = "/?"+where+adults+check_in+check_out;
       window.location.assign(url);
     });
 
@@ -58,26 +56,7 @@ $(document).ready(function(){
     
 }
 
-function meu_callback(conteudo) {
-if (!("erro" in conteudo)) {
-    //Atualiza os campos com os valores.
-    document.getElementById('road').value=(conteudo.logradouro);
-    if(conteudo.district != "" && conteudo.district != undefined) {
-      
-    }else{
-      document.getElementById('district').value=("");
-    }
-    
-    document.getElementById('city').value=(conteudo.localidade);
-    document.getElementById('state').value=(conteudo.uf);
-} //end if.
-else {
-    //CEP não Encontrado.
-    limpa_formulario_cep();
-    alert("CEP não encontrado.");
-    document.getElementById('cep').value=("");
-}
-}
+
 
 function pesquisacep(valor) {
 
@@ -119,7 +98,30 @@ else {
     // limpa_formulario_cep();
 }
 }
+function meu_callback(conteudo) {
+    if (!("erro" in conteudo)) {
+        //Atualiza os campos com os valores.
+        document.getElementById('road').value=(conteudo.logradouro);
+        if(conteudo.district != "" && conteudo.district != undefined) {
+          
+        }else{
+          document.getElementById('district').value=("");
+        }
+        console.log(conteudo.uf);
+        
+       
 
+        document.getElementById('state').value=(conteudo.uf);
+        document.getElementById('state').dispatchEvent(new Event('change'));
+        document.getElementById('city').value=(conteudo.localidade);
+    } //end if.
+    else {
+        //CEP não Encontrado.
+        limpa_formulario_cep();
+        alert("CEP não encontrado.");
+    }
+    }
+    
 function formatar(mascara, documento){
 var i = documento.value.length;
 var saida = mascara.substring(0,1);
@@ -197,4 +199,50 @@ function validarCPF(cpf) {
         return true;
     }
 }
+        $('#navbar_when').daterangepicker({
+            "locale": {
+                "format": "DD/MM/YYYY",
+                "separator": " - ",
+                "applyLabel": "Aplicar",
+                "cancelLabel": "Cancelar",
+                "fromLabel": "From",
+                "toLabel": "To",
+                "customRangeLabel": "Custom",
+                "weekLabel": "W",
+                "daysOfWeek": [
+                    "dom",
+                    "seg",
+                    "terç",
+                    "qua",
+                    "qui",
+                    "sex",
+                    "Sáb"
+                ],
+                "monthNames": [
+                    "Janeiro",
+                    "Fevereiro",
+                    "Março",
+                    "Abril",
+                    "Maio",
+                    "Junho",
+                    "Julho",
+                    "Agosto",
+                    "Setembro",
+                    "Outubro",
+                    "Novembro",
+                    "Dezembro"
+                ],
+                "firstDay": 1
+            },
+            "startDate": "07/07/2022",
+            "endDate": "08/07/2022"
+        }, function(start, end, label) {
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format(
+                'YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        });
+        function initAutocomplete() {
+            var address = document.getElementById('navbar_where');
+            var autocomplete = new google.maps.places.Autocomplete(address);
+        }
+
 

@@ -79,7 +79,7 @@
                             <div class="d-flex">
                                 <div class=" col-sm-6">
                                     <p class="dropdown_title_people">Adultos</p>
-                                    <p class="dropdown_sub_title_people">12 anos ou mais</p>
+                                    {{-- <p class="dropdown_sub_title_people">12 anos ou mais</p> --}}
                                 </div>
                                 <div class="d-flex col-sm-6 justify-content-center align-items-center">
                                     <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease"
@@ -95,46 +95,10 @@
                                         data-target="number_adults"></i>
                                 </div>
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="d-flex">
-                                <div class=" col-sm-6">
-                                    <p class="dropdown_title_people">Crianças</p>
-                                    <p class="dropdown_sub_title_people">De 2 até 12 anos </p>
-                                </div>
-                                <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                    <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease"
-                                        data-target="number_children"></i>
-                                    <p id="number_children">
-                                        @if (!empty($children))
-                                            {{ $children }}
-                                        @else
-                                            0
-                                        @endif
-                                    </p>
-                                    <i class="fa-solid fa-circle-plus fa-xl icon_people button_add"
-                                        data-target="number_children"></i>
-                                </div>
-                            </div>
-                            <div class="dropdown-divider"></div>
-                            <div class="d-flex">
-                                <div class=" col-sm-6">
-                                    <p class="dropdown_title_people">Pets</p>
-                                    <p class="dropdown_sub_title_people"></p>
-                                </div>
-                                <div class="d-flex col-sm-6 justify-content-center align-items-center">
-                                    <i class="fa-solid fa-circle-minus fa-xl icon_people button_decrease"
-                                        data-target="number_pets"></i>
-                                    <p id="number_pets">
-                                        @if (!empty($pets))
-                                            {{ $pets }}
-                                        @else
-                                            0
-                                        @endif
-                                    </p>
-                                    <i class="fa-solid fa-circle-plus fa-xl icon_people button_add"
-                                        data-target="number_pets"></i>
-                                </div>
-                            </div>
+                        </div>
+                    </li>
+                    <li>
+
                     </li>
                     <li>
                         <button class="btn btn-danger button_header d-none d-lg-block button-search text-center"
@@ -168,8 +132,7 @@
                             @if (!empty(auth()->user()->name))
                                 <a class="dropdown_title_config dropdown-item" href="{{ route('user.index') }}">
                                     Meus dados</a>
-                                <a class="dropdown_title_config dropdown-item"
-                                    href="{{ route('immobile.my') }}">
+                                <a class="dropdown_title_config dropdown-item" href="{{ route('immobile.my') }}">
                                     Meus Imoveis</a>
                                 <a class="dropdown_title_config dropdown-item" href="{{ route('logout') }}">
                                     Logout</a>
@@ -182,59 +145,7 @@
             <div><a href="{{ route('immobile.create') }}" class="btn btn-danger">Cadastre seu imovel</a></div>
         </nav>
     </div>
-    <script>
-        $('#navbar_when').daterangepicker({
-            "locale": {
-                "format":"DD/MM/YYYY",
-                "separator": " - ",
-                "applyLabel": "Aplicar",
-                "cancelLabel": "Cancelar",
-                "fromLabel": "From",
-                "toLabel": "To",
-                "customRangeLabel": "Custom",
-                "weekLabel": "W",
-                "daysOfWeek": [
-                    "dom",
-                    "seg",
-                    "terç",
-                    "qua",
-                    "qui",
-                    "sex",
-                    "Sáb"
-                ],
-                "monthNames": [
-                    "Janeiro",
-                    "Fevereiro",
-                    "Março",
-                    "Abril",
-                    "Maio",
-                    "Junho",
-                    "Julho",
-                    "Agosto",
-                    "Setembro",
-                    "Outubro",
-                    "Novembro",
-                    "Dezembro"
-                ],
-                "firstDay": 1
-            },
-            "startDate": "07/07/2022",
-            "endDate": "08/07/2022"
-        }, function(start, end, label) {
-            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format(
-                'YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-        });
-    </script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete&language=nl&output=json&key=AIzaSyBHO3zyVXKQHHS4E8MGc00YQN0Tbgajpb0"
-        async defer></script>
 
-    <script type="text/javascript">
-        function initAutocomplete() {
-            var address = document.getElementById('navbar_where');
-            var autocomplete = new google.maps.places.Autocomplete(address);
-        }
-    </script>
     @if (session()->has('mensage') && session()->get('mensage.function') == 'login')
         <script>
             $(document).ready(function() {

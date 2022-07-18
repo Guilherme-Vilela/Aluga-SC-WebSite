@@ -102,7 +102,7 @@ class ImmobileController extends Controller
             $immobile_image->save();    
             unset($immobile_image);
         }
-        return view("Immobile/show",['immobile'=>$immobile]);
+        return redirect(route('immobile.show', ['immobile' => $immobile['id']]));
     }
 
     /**

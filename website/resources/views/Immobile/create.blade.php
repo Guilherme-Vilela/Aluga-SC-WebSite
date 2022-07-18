@@ -28,314 +28,296 @@
                         <form action="{{ route('immobile.store') }}" method="POST" enctype="multipart/form-data"
                             id="form_store_immobile">
                             @csrf
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="col-12 d-flex  justify-content-center align-items-center"
-                                        style="min-height:80vh;">
+                            <div class="container" style="width: 90%;">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="col-12 d-flex  justify-content-center align-items-center"
+                                            style="min-height:80vh;">
 
-                                        <div class="row " style="max-height:40vh;">
-                                            <div class="col-sm-12  justify-content-center m-2">
-                                                <h4 class="text-center"> Selecione abaixo o tipo da sua residencia</h4>
-                                            </div>
-                                            <div class="col-12 d-flex justify-content-center aling-content-center m-2">
-                                                <button type="button"
-                                                    class="button_selection_type_immobile d-flex justify-content-between align-items-center"
-                                                    value="Casa"><span><b>Casa</b></span>
-                                                    <img src={{ asset('images/create_immobile/home.jpg') }}
-                                                        class="image_option_create_immobile">
-                                                </button>
-                                            </div>
-                                            <div class="col-12 d-flex justify-content-center m-2">
-                                                <button type="button"
-                                                    class="button_selection_type_immobile d-flex justify-content-between align-items-center"
-                                                    value="Apartamento"><b>Apartamento</b></span>
-                                                    <img src={{ asset('images/create_immobile/apartment.jpg') }}
-                                                        class="image_option_create_immobile">
-                                                </button>
-                                            </div>
-                                            <div class="col-12 d-flex justify-content-center m-2">
-                                                <button type="button"
-                                                    class="button_selection_type_immobile d-flex justify-content-between align-items-center"
-                                                    value="Pousada"><span><b>Pousada</b></span>
-                                                    <img src={{ asset('images/create_immobile/inn.jpg') }}
-                                                        class="image_option_create_immobile">
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
-                                        <div class="row ">
-                                            <div class="col-sm-12  justify-content-center m-2">
-                                                <h4 class="text-center"> Informe abaixo os dados referentes a localização da
-                                                    sua
-                                                    residência</h4>
-                                            </div>
-                                            <div class="col-sm-6  justify-content-center mt-2">
-                                                <label class="control-label">CEP </label>
-                                                <input id="cep" name="cep" placeholder="Apenas números"
-                                                    class="form-control input-md" maxlength="8"
-                                                    onkeyup="pesquisacep(value)" value="89120000">
-                                            </div>
-                                            <div class="col-sm-6  justify-content-center mt-1">
-                                                <label>Selecione o estado</label>
-                                                <select name="state" id="state" class="form-control">
-                                                    <option value="">Selecione</option>
-                                                    <option value="AC">AC</option>
-                                                    <option value="AL">AL</option>
-                                                    <option value="AP">AP</option>
-                                                    <option value="AM">AM</option>
-                                                    <option value="BA">BA</option>
-                                                    <option value="CE">CE</option>
-                                                    <option value="DF">DF</option>
-                                                    <option value="ES">ES</option>
-                                                    <option value="GO">GO</option>
-                                                    <option value="MA">MA</option>
-                                                    <option value="MT">MT</option>
-                                                    <option value="MS">MS</option>
-                                                    <option value="MG">MG</option>
-                                                    <option value="PA">PA</option>
-                                                    <option value="PB">PB</option>
-                                                    <option value="PR">PR</option>
-                                                    <option value="PE">PE</option>
-                                                    <option value="PI">PI</option>
-                                                    <option value="RJ">RJ</option>
-                                                    <option value="RN">RN</option>
-                                                    <option value="RS">RS</option>
-                                                    <option value="RO">RO</option>
-                                                    <option value="RR">RR</option>
-                                                    <option value="SC" selected>SC</option>
-                                                    <option value="SP">SP</option>
-                                                    <option value="SE">SE</option>
-                                                    <option value="TO">TO</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="col-sm-6  justify-content-center mt-2">
-                                                <label>Cidade</label>
-                                                <input type="text" class="form-control" id="city" value="Timbo"
-                                                    name="city">
-                                            </div>
-                                            <div class="col-sm-6  justify-content-center mt-2">
-                                                <label>Bairro</label>
-                                                <input type="text" class="form-control" id="district"
-                                                    value="Padre Martinho" name="district">
-                                            </div>
-
-                                            <div class="col-sm-6  justify-content-center mt-1">
-                                                <label>Rua</label>
-                                                <input type="text" class="form-control" id="road"
-                                                    value="Rua Arnold Albrech" name="road">
-                                            </div>
-                                            <div class="col-sm-6  justify-content-center mt-1">
-                                                <label>Número</label>
-                                                <input type="text" class="form-control" id="number" value="512"
-                                                    name="number">
-                                            </div>
-                                            <div class="col-sm-12   justify-content-center mt-1">
-                                                <label>Complemento</label>
-                                                <input type="text" class="form-control" id="complement"
-                                                    value="casa 2" name="complement">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
-                                        <div class="row ">
-                                            <div class="col-sm-12  justify-content-center m-2">
-                                                <h4 class="text-center"> Informe abaixo alguns dados da sua Residencia</h4>
-                                            </div>
-                                            <div class="col-sm-12 d-flex justify-content-center alin mt-2 mb-5">
-                                                <div class="col-sm-4 text-center">
-                                                    <img src="{{ asset('icons/solid/house-chimney-window.svg') }}"
-                                                        width="30" height="24"> </object>
-                                                    <br>
-                                                    <label>Nome da sua residencia</label>
-                                                    <input type="text" id="name_immobile" class="form-control"
-                                                        value="casa da nena" name="name_immobile">
+                                            <div class="row " style="max-height:40vh;">
+                                                <div class="col-sm-12  justify-content-center m-2">
+                                                    <h4 class="text-center"> Selecione abaixo o tipo da sua residencia</h4>
                                                 </div>
-                                                <div class="col-sm-4 text-center">
-                                                    <img src="{{ asset('icons/solid/money-bills.svg') }}" width="30"
-                                                        height="24"> </object>
-                                                    <br>
-                                                    <label>Valor a ser cobrado por noite</label>
-                                                    <input type="text" id="value_immobile" class="form-control "
-                                                        value="120" name="value_immobile">
+                                                <div class="col-12 d-flex justify-content-center aling-content-center m-2">
+                                                    <button type="button"
+                                                        class="button_selection_type_immobile d-flex justify-content-between align-items-center"
+                                                        value="Casa"><span><b>Casa</b></span>
+                                                        <img src={{ asset('images/create_immobile/home.jpg') }}
+                                                            class="image_option_create_immobile">
+                                                    </button>
                                                 </div>
-                                                <div class="col-sm-4 text-center">
-                                                    <img src="{{ asset('icons/solid/person-circle-plus.svg') }}"
-                                                        width="30" height="24"> </object>
-                                                    <br>
-                                                    <label>Capacidade de hóspedes</label>
-                                                    <input type="text" id="quantity_people" class="form-control"
-                                                        value="6" name="quantity_people">
+                                                <div class="col-12 d-flex justify-content-center m-2">
+                                                    <button type="button"
+                                                        class="button_selection_type_immobile d-flex justify-content-between align-items-center"
+                                                        value="Apartamento"><b>Apartamento</b></span>
+                                                        <img src={{ asset('images/create_immobile/apartment.jpg') }}
+                                                            class="image_option_create_immobile">
+                                                    </button>
                                                 </div>
-
-                                            </div>
-                                            <div class="col-sm-12  justify-content-center mt-2">
-                                                <h4 class="text-center">Comodos importantes</h4>
-                                            </div>
-                                            <div class="col-sm-12  d-flex justify-content-center mt-2">
-                                                <div class="col-sm-4 text-center">
-                                                    <img src="{{ asset('icons/solid/bath.svg') }}" width="30"
-                                                        height="24"> </object>
-                                                    <br>
-                                                    <label>Quantidade de banheiros </label>
-                                                    <input type="text" id="bathrooms_immobile" class="form-control"
-                                                        value="1" name="bathrooms_immobile" style="width:100%;">
-                                                </div>
-                                                <div class="col-sm-4 text-center">
-                                                    <img src="{{ asset('icons/solid/bed.svg') }}" width="30"
-                                                        height="24"> </object>
-                                                    <br>
-                                                    <label>Quantidade de quartos </label>
-                                                    <input type="text" id="bedrooms_immobile" class="form-control"
-                                                        value="1" name="bedrooms_immobile">
+                                                <div class="col-12 d-flex justify-content-center m-2">
+                                                    <button type="button"
+                                                        class="button_selection_type_immobile d-flex justify-content-between align-items-center"
+                                                        value="Pousada"><span><b>Pousada</b></span>
+                                                        <img src={{ asset('images/create_immobile/inn.jpg') }}
+                                                            class="image_option_create_immobile">
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
-                                        <div class="row">
-                                            <div class="col-sm-12  justify-content-center m-2">
-                                                <h3 class="text-center"> Onde os hospedes irão dormir</h3>
-                                            </div>
+                                    <div class="carousel-item">
+                                        <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
+                                            <div class="row ">
+                                                <div class="col-sm-12  justify-content-center m-2">
+                                                    <h4 class="text-center"> Informe abaixo os dados referentes a
+                                                        localização da
+                                                        sua
+                                                        residência</h4>
+                                                </div>
+                                                <div class="col-sm-6  justify-content-center mt-2">
+                                                    <label class="control-label">CEP </label>
+                                                    <input id="cep" name="cep" placeholder="Apenas números"
+                                                        class="form-control input-md" maxlength="8"
+                                                        onkeyup="pesquisacep(value)" value="89120000">
+                                                </div>
+                                                <div class="col-sm-6  justify-content-center mt-1">
+                                                    <label>Selecione o estado</label>
+                                                    <select name="state" id="state" class="form-control">
 
-                                            <div class="col-sm-12  d-flex justify-content-center mt-2">
-                                                <div class="col-sm-4  text-center justify-content-center ">
-                                                    <img src={{ asset('images/create_immobile/bed.png') }} class=""
-                                                        style="height: 24px;">
-                                                    <br>
-                                                    <label>Quantidade de Camas de casal</label>
-                                                    <input type="text" id="double_bed" class="form-control"
-                                                        name="double_bed" value="1">
+                                                    </select>
                                                 </div>
-                                                <div class="col-sm-4  text-center justify-content-center ">
-                                                    <img src="{{ asset('icons/solid/bed.svg') }}" width="30"
-                                                        height="24"> </object>
-                                                    <br>
-                                                    <label>Quantidade de Camas de solteiro</label>
-                                                    <input type="text" id="single_bed" class="form-control"
-                                                        name="single_bed" value="1">
+
+                                                <div class="col-sm-6  justify-content-center mt-2">
+                                                    <label>Cidade</label>
+                                                    <select name="city" id="city" class="form-control">
+
+                                                    </select>
                                                 </div>
-                                                <div class="col-sm-4  text-center justify-content-center ">
-                                                    <img src="{{ asset('icons/solid/couch.svg') }}" width="30"
-                                                        height="24"> </object>
-                                                    <br>
-                                                    <label>Quantidade de sofá cama</label>
-                                                    <input type="text" id="couch" class="form-control"
-                                                        name="couch" value="1">
+                                                <div class="col-sm-6  justify-content-center mt-2">
+                                                    <label>Bairro</label>
+                                                    <input type="text" class="form-control" id="district"
+                                                        value="Padre Martinho" name="district">
+                                                </div>
+
+                                                <div class="col-sm-6  justify-content-center mt-1">
+                                                    <label>Rua</label>
+                                                    <input type="text" class="form-control" id="road"
+                                                        value="Rua Arnold Albrech" name="road">
+                                                </div>
+                                                <div class="col-sm-6  justify-content-center mt-1">
+                                                    <label>Número</label>
+                                                    <input type="text" class="form-control" id="number"
+                                                        value="512" name="number">
+                                                </div>
+                                                <div class="col-sm-12   justify-content-center mt-1">
+                                                    <label>Complemento</label>
+                                                    <input type="text" class="form-control" id="complement"
+                                                        value="casa 2" name="complement">
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
-                                        <div class="row">
-                                            <div class="col-12 d-flex justify-content-center mt-2">
-                                                <h4>Selecione as comodidades que estão disponiveis em sua acomodação</h4>
-                                            </div>
-                                            <div class="col-12 d-flex justify-content-center mt-2">
-                                                <div class="row">
-                                                    @foreach ($furnitures as $furniture)
-                                                        <div class="col-4 d-flex justify-content-center mt-2">
+                                    <div class="carousel-item">
+                                        <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
+                                            <div class="row ">
+                                                <div class="col-sm-12  justify-content-center m-2">
+                                                    <h4 class="text-center"> Informe abaixo alguns dados da sua Residencia
+                                                    </h4>
+                                                </div>
+                                                <div class="col-sm-12 d-flex justify-content-center alin mt-2 mb-5">
+                                                    <div class="col-sm-4 text-center">
+                                                        <img src="{{ asset('icons/solid/house-chimney-window.svg') }}"
+                                                            width="30" height="24"> </object>
+                                                        <br>
+                                                        <label>Nome da sua residencia</label>
+                                                        <input type="text" id="name_immobile" class="form-control"
+                                                            value="casa da nena" name="name_immobile">
+                                                    </div>
+                                                    <div class="col-sm-4 text-center">
+                                                        <img src="{{ asset('icons/solid/money-bills.svg') }}"
+                                                            width="30" height="24"> </object>
+                                                        <br>
+                                                        <label>Valor a ser cobrado por noite</label>
+                                                        <input type="text" id="value_immobile" class="form-control "
+                                                            value="120" name="value_immobile">
+                                                    </div>
+                                                    <div class="col-sm-4 text-center">
+                                                        <img src="{{ asset('icons/solid/person-circle-plus.svg') }}"
+                                                            width="30" height="24"> </object>
+                                                        <br>
+                                                        <label>Capacidade de hóspedes</label>
+                                                        <input type="text" id="quantity_people" class="form-control"
+                                                            value="6" name="quantity_people">
+                                                    </div>
 
-                                                            <div class="text-center option_convenience cursor-pointer"
-                                                                value="{{ $furniture->id }}"
-                                                                style="border: 2px black solid;">
-                                                                <div>
+                                                </div>
+                                                <div class="col-sm-12  justify-content-center mt-2">
+                                                    <h4 class="text-center">Comodos importantes</h4>
+                                                </div>
+                                                <div class="col-sm-12  d-flex justify-content-center mt-2">
+                                                    <div class="col-sm-4 text-center">
+                                                        <img src="{{ asset('icons/solid/bath.svg') }}" width="30"
+                                                            height="24"> </object>
+                                                        <br>
+                                                        <label>Quantidade de banheiros </label>
+                                                        <input type="text" id="bathrooms_immobile"
+                                                            class="form-control" value="1" name="bathrooms_immobile"
+                                                            style="width:100%;">
+                                                    </div>
+                                                    <div class="col-sm-4 text-center">
+                                                        <img src="{{ asset('icons/solid/bed.svg') }}" width="30"
+                                                            height="24"> </object>
+                                                        <br>
+                                                        <label>Quantidade de quartos </label>
+                                                        <input type="text" id="bedrooms_immobile" class="form-control"
+                                                            value="1" name="bedrooms_immobile">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
+                                            <div class="row">
+                                                <div class="col-sm-12  justify-content-center m-2">
+                                                    <h3 class="text-center"> Onde os hospedes irão dormir</h3>
+                                                </div>
+
+                                                <div class="col-sm-12  d-flex justify-content-center mt-2">
+                                                    <div class="col-sm-4  text-center justify-content-center ">
+                                                        <img src={{ asset('images/create_immobile/bed.png') }}
+                                                            class="" style="height: 24px;">
+                                                        <br>
+                                                        <label>Quantidade de Camas de casal</label>
+                                                        <input type="text" id="double_bed" class="form-control"
+                                                            name="double_bed" value="1">
+                                                    </div>
+                                                    <div class="col-sm-4  text-center justify-content-center ">
+                                                        <img src="{{ asset('icons/solid/bed.svg') }}" width="30"
+                                                            height="24"> </object>
+                                                        <br>
+                                                        <label>Quantidade de Camas de solteiro</label>
+                                                        <input type="text" id="single_bed" class="form-control"
+                                                            name="single_bed" value="1">
+                                                    </div>
+                                                    <div class="col-sm-4  text-center justify-content-center ">
+                                                        <img src="{{ asset('icons/solid/couch.svg') }}" width="30"
+                                                            height="24"> </object>
+                                                        <br>
+                                                        <label>Quantidade de sofá cama</label>
+                                                        <input type="text" id="couch" class="form-control"
+                                                            name="couch" value="1">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-center mt-2">
+                                                    <h4>Selecione as comodidades que estão disponiveis em sua acomodação
+                                                    </h4>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-center mt-2">
+                                                    <div class="row">
+                                                        @foreach ($furnitures as $furniture)
+                                                            <div class="col-sm-4 d-flex justify-content-center mt-2">
+                                                                <div class="text-center option_convenience cursor-pointer "
+                                                                    value="{{ $furniture->id }}"
+                                                                    style="border: 2px black solid;">
                                                                     <img src="{{ asset('icons/solid/' . $furniture->icon) }}"
-                                                                        width="30" height="24"> </object>
-                                                                </div>
-                                                                <div>
-                                                                    <span><b>{{ $furniture->name }}</b></span>
+                                                                        width="30" height="24" class="mt-2">
+                                                                    </object>
+                                                                    <p class="mb-2 text-center">
+                                                                        <b>{{ $furniture->name }}</b>
+                                                                    </p>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    @endforeach
+                                                        @endforeach
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
-                                        <div class="row">
-                                            <div class="col-sm-12  justify-content-center m-2">
-                                                <h4 class="text-center"> Informe abaixo as informações que os hospedes tem
-                                                    que saber</h4>
-                                            </div>
+                                    <div class="carousel-item">
+                                        <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
+                                            <div class="row">
+                                                <div class="col-sm-12  justify-content-center m-2">
+                                                    <h4 class="text-center"> Informe abaixo as informações que os hospedes
+                                                        tem
+                                                        que saber</h4>
+                                                </div>
                                                 @foreach ($rooms as $room)
-                                                    <div class="col-4 d-flex justify-content-center mt-2 ">
+                                                    <div class="col-sm-4 d-flex justify-content-center mt-2 ">
                                                         <div class=" text-center  cursor-pointer option_rooms"
                                                             value="{{ $room->id }}" style="border: 2px black solid;">
-                                                            <div>
-                                                                <img src="{{ asset('icons/solid/' . $room->icon) }}"
-                                                                    width="30" height="24"> </object>
-                                                            </div>
-                                                            <div>
-                                                                <span><b>{{ $room->name }}</b></span>
-                                                            </div>
+
+                                                            <img src="{{ asset('icons/solid/' . $room->icon) }}"
+                                                                width="30" height="24" class="mt-2"> </object>
+                                                            <p class="mb-2 text-center"><b>{{ $room->name }}</b></p>
+
                                                         </div>
                                                     </div>
                                                 @endforeach
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                            <div class="carousel-item">
-                                <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
-                                    <div class="row ">
-                                        <div class="col-sm-12  justify-content-center m-2">
-                                            <h4 class="text-center"> Informe abaixo as informações que os hospedes tem
-                                                que saber</h4>
+                                    <div class="carousel-item">
+                                        <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
+                                            <div class="row ">
+                                                <div class="col-sm-12  justify-content-center m-2">
+                                                    <h4 class="text-center"> Informe abaixo as informações que os hospedes
+                                                        tem
+                                                        que saber</h4>
+                                                </div>
+                                                <div class="col-12 justify-content-center m-2">
+                                                    <label>Regras da casa</label>
+                                                    <input type="text" class="form-control" id="rule_immobile"
+                                                        name="rules_immobile">
+                                                </div>
+                                                <div class="col-12  justify-content-center m-2">
+                                                    <label>Descrição</label>
+                                                    <textarea type="text" id="description_immobile" class="form-control" name="description_immobile"></textarea>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-12 justify-content-center m-2">
-                                            <label>Regras da casa</label>
-                                            <input type="text" class="form-control" id="rule_immobile"
-                                                name="rules_immobile">
-                                        </div>
-                                        <div class="col-12  justify-content-center m-2">
-                                            <label>Descrição</label>
-                                            <textarea type="text" id="description_immobile" class="form-control" name="description_immobile"></textarea>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
+                                            <div class="row ">
+                                                <div class="col-sm-12  justify-content-center m-2">
+                                                    <h4 class="text-center">Aqui você vai colocar as imagens da sua
+                                                        residencia
+                                                        para os hospedes verem</h4>
+                                                </div>
+                                                <div class="col-sm-12   justify-content-center m-2">
+                                                    <label>Adicione aqui a melhor imagem da sua residencia, essa imagem sera
+                                                        a sua <b>capa para os hospedes </b></label>
+                                                    <input type="file" id="image_main" name="image_main"
+                                                        class="form-control">
+                                                </div>
+                                                <div class="col-sm-12  justify-content-center m-2">
+                                                    <label>Adicione aqui todas as outras imagens que desejar da sua
+                                                        residencia
+                                                    </label>
+                                                    <input type="file" id="image_immobile" name="images[]"
+                                                        class="form-control" multiple>
+                                                </div>
+                                            </div>
+                                            <input id="input_type_immobile" type=text name="type_immobile"
+                                                class="d-none">
+                                            <input id="input_coveniences_immobile" type=text name="coveniences_immobile"
+                                                class="d-none">
+                                            <input id="input_rooms_immobile" type=text name="rooms_immobile"
+                                                class="d-none">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-12 d-flex align-items-center" style="min-height:80vh;">
-                                    <div class="row ">
-                                        <div class="col-sm-12  justify-content-center m-2">
-                                            <h4 class="text-center">Aqui você vai colocar as imagens da sua residencia
-                                                para os hospedes verem</h4>
-                                        </div>
-                                        <div class="col-sm-12   justify-content-center m-2">
-                                            <label>Adicione aqui a melhor imagem da sua residencia, essa imagem sera
-                                                a sua <b>capa para os hospedes </b></label>
-                                            <input type="file" id="image_main" name="image_main"
-                                                class="form-control">
-                                        </div>
-                                        <div class="col-sm-12  justify-content-center m-2">
-                                            <label>Adicione aqui todas as outras imagens que desejar da sua residencia
-                                            </label>
-                                            <input type="file" id="image_immobile" name="images[]"
-                                                class="form-control" multiple>
-                                        </div>
-                                    </div>
-                                    <input id="input_type_immobile" type=text name="type_immobile" class="d-none">
-                                    <input id="input_coveniences_immobile" type=text name="coveniences_immobile"
-                                        class="d-none">
-                                    <input id="input_rooms_immobile" type=text name="rooms_immobile" class="d-none">
-                                </div>
-                            </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
                 <div class="col-12 d-flex justify-content-around " style="height:5vh;">
                     <a class="h5 cursor-pointer carousel-control-prev-create"
@@ -470,6 +452,41 @@
 
 
             })
+
+            /// search states
+            $.getJSON("{{ asset('js/cities/city.json') }}", function(data) {
+
+                var items = [];
+                var options = '<option value="">escolha um estado</option>';
+                $.each(data, function(key, val) {
+                    options += '<option value="' + val.sigla + '">' + val.nome + '</option>';
+                });
+                $("#state").html(options);
+
+                $("#state").change(function() {
+
+                    var options_cidades = '';
+                    var str = "";
+
+                    $("#state option:selected").each(function() {
+                        str += $(this).text();
+                    });
+
+                    $.each(data, function(key, val) {
+                        if (val.nome == str) {
+                            $.each(val.cidades, function(key_city, val_city) {
+                                options_cidades += '<option value="' + val_city +
+                                    '">' +
+                                    val_city + '</option>';
+                            });
+                        }
+                    });
+
+                    $("#city").html(options_cidades);
+                }).change();
+
+            });
+
         })
 
         function move_carousel(move) {
@@ -544,6 +561,7 @@
                     title: msg,
                 })
             }
+
         }
 
         function validate_characteristic_immobile(position) {
@@ -625,5 +643,12 @@
             $("#input_rooms_immobile").val(array_immobile[5].toString());
             $("#form_store_immobile").submit();
         }
+
+
+
+        $(document).ready(function() {
+
+
+        });
     </script>
 @endsection

@@ -15,15 +15,14 @@
 <link href='{{ asset('css/calendar/daterangepicker.css') }}' rel='stylesheet' />
 
 <script  src="{{asset('js/Jquery/jquery.js')}}"></script>
-<script  src="{{asset('js/Bootstrap/bootstrap.js')}}" ></script>
+<script  src="{{asset('js/Bootstrap/bootstrap.js')}}" ></script>  
 <script  src='{{asset('js/calendar/moment.min.js') }}'></script>
 <script  src='{{asset('js/calendar/daterangepicker.js') }}'></script>
 <script  src="{{asset('js/Jquery/jquery.mask.min.js')}}"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-<!-- JavaScript SweetAlert2 -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- JavaScript Font Awesome icons -->
 <script src="https://kit.fontawesome.com/7bfbda1166.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{asset('js/Default/Header/main.js')}}"></script>
 </head>
 <body>
 
@@ -34,6 +33,6 @@
 @include('Default.register')
 </body>
 
-<script type="text/javascript" src="{{asset('js/Default/Header/main.js')}}"></script>
+
 
 </html>

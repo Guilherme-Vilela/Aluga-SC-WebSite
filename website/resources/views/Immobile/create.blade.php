@@ -15,16 +15,6 @@
             <div class="col-sm-6  d-flex justify-content-center align-items-center m-0 p-0">
                 <div class="row">
                     <div id="carousel" class="carousel slide col-sm-12" data-ride="carousel" data-interval="false">
-                        <ol class="carousel-indicators">
-                            <li data-target="" style="background-color: black;" data-slide-to="0" class="active"></li>
-                            <li data-target="" style="background-color: black;" data-slide-to="1"></li>
-                            <li data-target="" style="background-color: black;" data-slide-to="2"></li>
-                            <li data-target="" style="background-color: black;" data-slide-to="3"></li>
-                            <li data-target="" style="background-color: black;" data-slide-to="4"></li>
-                            <li data-target="" style="background-color: black;" data-slide-to="5"></li>
-                            <li data-target="" style="background-color: black;" data-slide-to="6"></li>
-                            <li data-target="" style="background-color: black;" data-slide-to="7"></li>
-                        </ol>
                         <form action="{{ route('immobile.store') }}" method="POST" enctype="multipart/form-data"
                             id="form_store_immobile">
                             @csrf
@@ -317,15 +307,25 @@
                                     </div>
                                 </div>
                         </form>
+                        <ol class="carousel-indicators">
+                            <li data-target="" style="background-color: black;" data-slide-to="0" class="active"></li>
+                            <li data-target="" style="background-color: black;" data-slide-to="1"></li>
+                            <li data-target="" style="background-color: black;" data-slide-to="2"></li>
+                            <li data-target="" style="background-color: black;" data-slide-to="3"></li>
+                            <li data-target="" style="background-color: black;" data-slide-to="4"></li>
+                            <li data-target="" style="background-color: black;" data-slide-to="5"></li>
+                            <li data-target="" style="background-color: black;" data-slide-to="6"></li>
+                            <li data-target="" style="background-color: black;" data-slide-to="7"></li>
+                        </ol>
                     </div>
                 </div>
-                <div class="col-12 d-flex justify-content-around " style="height:5vh;">
+                <div class="col-12 d-flex justify-content-around mt-3" style="height:30px;">
                     <a class="h5 cursor-pointer carousel-control-prev-create"
-                        style="color: black !important;height: 25px;" data-slide="prev">
+                        style="color: black !important;height: 30px;" data-slide="prev">
                         <b>Voltar</b>
                     </a>
                     <a class="h5 cursor-pointer carousel-control-next-create"
-                        style="color: black !important;height: 25px;" data-slide="next">
+                        style="color: black !important;height: 30px;" data-slide="next">
                         <b>Continuar</b>
                     </a>
                 </div>
@@ -644,11 +644,5 @@
             $("#form_store_immobile").submit();
         }
 
-
-
-        $(document).ready(function() {
-
-
-        });
     </script>
 @endsection

@@ -17,7 +17,8 @@
         </div>
         <div class="row" style="margin-top: 25px;">
             <div class="col-12 content_immobile_header">
-                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modal_images" style = "    position: absolute;">
+                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modal_images"
+                    style="    position: absolute;">
                     Clique aqui para visuaizar todas as imagens
                 </button>
                 <img src="{{ url('storage/' . $immobile->images[0]->path_image) }}" class="image_immobile_header">
@@ -157,19 +158,23 @@
                         <a class="pl-2" style="">Comentarios</a>
                     </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-sm-10 option_reserve ">
-                        <div class="row p-1 ">
-                            <label class="pl-1 mt-1 mb-0 title_check " style="font-size:15px;"><b>Check-in e
-                                    Checkout</b></label>
-                            <input type="text" name="date-range" value="12/07/2022 - 12/07/2022" class="form-control"
-                                id="when_agend" />
+
+                <form method="get" action="{{ route('payment.create') }}">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-10 option_reserve ">
+                            <div class="row p-1 ">
+                                <label class="pl-1 mt-1 mb-0 title_check " style="font-size:15px;"><b>Check-in e
+                                        Checkout</b></label>
+                                <input type="text" name="date-range" value="12/07/2022 - 12/07/2022"
+                                    class="form-control" id="date_check" />
+                                <input type="text" name="immobile" value="{{ $immobile->id }}" style = "display: none" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 d-flex justify-content-center">
-                    <button class="btn btn-danger btn_reserve mt-2 mb-2">Reservar</button>
-                </div>
+                    <div class="col-12 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-danger btn_reserve mt-2 mb-2">Reservar</button>
+                    </div>
+                </form>
                 <div class="col-12 " style="border-top:1px solid #ccc;">
                     <p class="mt-1">Valor total a pagar : <b>R$<span id="amount"><span></b></p>
                 </div>
@@ -177,7 +182,7 @@
         </div>
         </div>
     </main>
-  
+
 
     <!-- Modal images-->
     <div class="modal fade" id="modal_images" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
@@ -186,7 +191,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Todas as imagens do imovel</h5>
-                  
+
                 </div>
                 <div class="modal-body">
                     <button type="button" class="close btn-primary m-3" data-dismiss="modal" aria-label="Close">
@@ -196,7 +201,8 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             @foreach ($immobile->images as $image)
-                                <img src="{{ url('storage/' . $image->path_image) }}" class="image_immobile_header m-2">
+                                <img src="{{ url('storage/' . $image->path_image) }}"
+                                    class="image_immobile_header m-2">
                             @endforeach
                         </div>
                     </div>
@@ -209,7 +215,7 @@
     </div>
 
     <script>
-        $('#when_agend').daterangepicker({
+        $('#date_check').daterangepicker({
             "locale": {
                 "format": "DD/MM/YYYY",
                 "separator": " - ",
@@ -249,16 +255,16 @@
         }, function(start, end, label) {});
         $(document).ready(function() {
             checkdate();
-            $("#when_agend").click(function() {
+            $("#date_check").click(function() {
                 checkdate();
             })
-            $("#when_agend").change(function() {
+            $("#date_check").change(function() {
                 checkdate();
             })
         })
 
         function checkdate() {
-            let data = $("#when_agend").val().trim();
+            let data = $("#date_check").val().trim();
             let value = "{{ $immobile->value }}";
             let checkin = new Date(data.substring(6, 10), data.substring(3, 5) - 1, data.substring(0, 2));
             let checkout = new Date(data.substring(19, 23), data.substring(16, 18) - 1, data.substring(13, 15));
@@ -267,5 +273,4 @@
             $("#amount").text(amount);
         }
     </script>
-    
 @endsection

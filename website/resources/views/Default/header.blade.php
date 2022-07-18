@@ -168,7 +168,7 @@
                 })
             })
         </script>
-        {{ session()->forget('mensage') }}
+        
     @endif
-
+        {{ session()->forget('mensage') }}
 </header>

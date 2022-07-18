@@ -13,7 +13,6 @@ class SocialiteController extends Controller
     }
     public function callback(Request $request)
     {
-        
         $user_data = Socialite::driver('google')->stateless()->user();
 
         $user = User::where('email',$user_data->email)->first();

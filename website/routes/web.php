@@ -35,7 +35,7 @@ Route::namespace('\App\Http\Controllers')->group(function () {
     Route::get('/atualizacao_cadastro', 'UserController@update')->middleware('auth')->name("user.update");
     Route::get('/usuario', 'UserController@index')->middleware('auth')->name("user.index");
     // Route::Resource('/mobilia',"FurnitureController")->names("furtinure")->parameters(['mobilia'=>'furtinure']);
-    // Route::Resource('/pagamento',"PaymentController")->names("payment")->parameters(['pagamento'=>'payment']);
+    Route::Resource('/reservar',"PaymentController")->names("payment")->middleware('auth')->parameters(['pagamento'=>'payment']);
     // Route::Resource('/comodo',"RoomController")->names("room")->parameters(['comodo'=>'room']);
     // Route::Resource('/agenda',"ScheduleController")->names("schedule")->parameters(['agenda'=>'schedule']);
 

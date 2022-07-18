@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Payment;
 use Illuminate\Http\Request;
-
+use App\Models\Immobile;
 class PaymentController extends Controller
 {
     /**
@@ -22,9 +22,18 @@ class PaymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Request $request)
+    {   
+       
+        $date = (str_replace('/','-',$request->query('date-range')));
+        $immobile = Immobile::find($request->query('immobile'));
+        $check_in = date('d-m-Y',strtotime(substr($date,0,10)));
+        $check_out = date('d-m-Y',strtotime(substr($date,13,20)));
+        $amount = ((strtotime($check_out)-strtotime($check_in))/86400)*$immobile->value;
+        $seller_id = date('dmYHis'.auth()->user()->id);
+
+      
+        return view('Payment/reserve',['immobile'=>$immobile,'check_in'=>$check_in,'check_out'=>$check_out,'amount'=>$amount, 'seller_id'=>$seller_id]);
     }
 
     /**
@@ -35,7 +44,8 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        dd($request);
     }
 
     /**

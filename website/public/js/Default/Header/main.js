@@ -158,6 +158,8 @@ return idade;
 function validarCPF(cpf) {
     // cpf.length == 11;
     cpf = cpf.replace(/[^\d]+/g, '')
+    cpf = cpf.replace('.','');
+    console.log(cpf);
     if (cpf.length == 11) {
         // Elimina CPFs invalidos conhecidos	
         if (cpf.length != 11 ||
@@ -178,11 +180,13 @@ function validarCPF(cpf) {
         for (i = 0; i < 9; i++)
             add += parseInt(cpf.charAt(i)) * (10 - i);
         rev = 11 - (add % 11);
-        if (rev == 10 || rev == 11)
+        if (rev == 10 || rev == 11){
             rev = 0;
-        if (rev != parseInt(cpf.charAt(9)))
+        }
+        if (rev != parseInt(cpf.charAt(9))){
             alert("CPF invalido");
         return false;
+        }
         // Valida 2o digito	
         add = 0;
         for (i = 0; i < 10; i++)
@@ -195,9 +199,9 @@ function validarCPF(cpf) {
             alert("CPF invalido");
             return false;
         }
-        alert("CPF valido");
         return true;
     }
+    
 }
         $('#navbar_when').daterangepicker({
             "locale": {

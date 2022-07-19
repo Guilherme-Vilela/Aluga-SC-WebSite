@@ -135,10 +135,10 @@
                         <div class="col-sm-12 mt-2 p-0">
                             <h5>Localização</h5>
                             <div class="col-sm-12 d-flex justify-content-center mt-3">
-                                {{-- <iframe
+                                <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56965.53095214268!2d-49.347034257598025!3d-26.828955306060656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94defc1aca81c1fd%3A0x8cab0e2b01ca5bd8!2zVGltYsOzLCBTQywgODkxMjAtMDAw!5e0!3m2!1spt-BR!2sbr!4v1658105943258!5m2!1spt-BR!2sbr"
                                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>

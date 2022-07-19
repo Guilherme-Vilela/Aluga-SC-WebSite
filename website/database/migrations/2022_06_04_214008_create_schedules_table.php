@@ -21,8 +21,8 @@ return new class extends Migration
             $table->date("check_in");
             $table->date("check_out");
             $table->String("status");
-            $table->String("comment");
-            $table->integer("note");
+            $table->String("comment")->nullable();
+            $table->integer("note")->nullable();
             $table->timestamps();
         });
     }

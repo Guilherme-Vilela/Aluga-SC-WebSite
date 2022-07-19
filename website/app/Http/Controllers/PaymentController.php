@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Payment;
 use Illuminate\Http\Request;
 use App\Models\Immobile;
+use App\Models\Getnet;
+use App\Models\Schedule;
 class PaymentController extends Controller
 {
     /**
@@ -45,7 +47,25 @@ class PaymentController extends Controller
     public function store(Request $request)
     {
         
-        dd($request);
+        // $ipAddress = $request->ip();
+        // $payment = new Payment();;
+        // $payment->method= "Credito";
+        // $payment->status=   "Pago";
+        // $payment->order_id= "1";
+        // $payment->ip= $ipAddress;
+        // $payment->payment_id = "1";
+        // $payment->seller_id = $request->session;
+        // $payment->amount = $request->amount*100;
+        // $payment->transaction_id = "1";
+        // $payment->json = "1";
+        // $payment->session = $request->session;
+        // $payment->customer_id = auth()->user()->id;
+        // $payment->save();
+            $payment = Payment::find(1);
+            $schedule = new Schedule();
+            
+        dd($payment);
+          
     }
 
     /**

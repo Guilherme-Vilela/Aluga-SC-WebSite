@@ -24,7 +24,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/7bfbda1166.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ asset('js/Default/Header/main.js') }}"></script>
-    <script type="text/javascript"src="https://h.online-metrix.net/fp/tags?org_id={1snn5n9w} &session_id={{"{".$seller_id."}"}}"></script>
 
 </head>
 

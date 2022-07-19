@@ -1,5 +1,11 @@
 @extends('Default.layout')
 @section('content')
+<noscript>
+    <iframe 
+      style="width: 100px; height: 100px; border: 0; position:absolute; top: -5000px;" 
+      src="https://h.online-metrix.net/fp/tags?org_id={1snn5n9w} &session_id={{"{".$seller_id."}"}}">
+    </iframe>
+  </noscript>
     <main class="container">
         <div class="row justify-content-center  align-content-center align-items-center" style="height: 90vh;">
             <div id="carousel" class="carousel slide col-sm-12 " data-ride="carousel" data-interval="false">

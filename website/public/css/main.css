@@ -393,3 +393,78 @@ footer{
     border-radius: 10px;
     box-shadow: 1px 1px 1px black;
   }
+  .container_cookie {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    background-color: #383b75;
+    display: flex;
+    color: white;
+    height: 60px;
+    font-size: 15px;
+    z-index: 10;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.texto_cookie {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px !important;
+}
+
+.cookie_aceitar {
+    background-color: #f1d600;
+    text-align: center;
+    height: 45px;
+    display: flex;
+    border-radius: 10px;
+    width: 75px;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes_cookie button {
+    color: black;
+}
+
+.botoes_aceita_cookie {
+    font-size: 15px;
+    height: 30px;
+}
+
+.botoes_aceita_cookie button {
+    width: 50%;
+    height: 30px;
+}
+
+@media (max-width: 800px) {
+    .container_cookie {
+        height: 125px;
+        font-size: 15px;
+    }
+    .modal-dialog-centered {
+        width: 80%;
+    }
+}
+
+#cookie_google {
+    font-size: 15px;
+    height: 30px;
+}
+
+.botoes_model_cookie {
+    width: 50%;
+    height: 30px;
+    font-size: 15px;
+    margin-top: 50px;
+}
+
+.btn_cookie {
+    transition: all 0.5s;
+    background: #ccc;
+}
+
+.btn_cookie_:hover {
+    background-color: green;
+}

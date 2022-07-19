@@ -2,7 +2,8 @@
 @section('content')
     <main class="container mt-5">
         <div class="row">
-
+           <h2 class = "text-center w-100"> {{session()->get('text.msg')}}</h2>
+           {{ session()->forget('text') }}
             @foreach ($immobiles as $immobile)
                 <article class="col-lg-3 mt-3 mb-3" style="">
                     <div class="image_content ">

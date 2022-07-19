@@ -25,10 +25,13 @@ $(document).ready(function(){
     });
 
     $(".button-search").click(function(){
+        let data = $("#navbar_when").val().trim();
+        let checkin = data.substring(6, 10)+"-"+ data.substring(3, 5) +"-"+ data.substring(0, 2);
+        let checkout = data.substring(19, 23)+"-" +data.substring(16, 18)+"-"+ data.substring(13, 15);
       let where     = "para_onde="+$("#navbar_where").val().trim()+"&";
-      let adults    = "adultos="+$("#number_adults").text().trim()+ "&";
-      let check_in  = "check_in="+$("#navbar_when").val().trim()+ "&";
-      let check_out = "check_out="+$("#navbar_when").val().trim();
+      let adults    = "pessoas="+$("#number_adults").text().trim()+ "&";
+      let check_in  = "check_in="+checkin+ "&";
+      let check_out = "check_out="+checkout;
       let url       = "/?"+where+adults+check_in+check_out;
       window.location.assign(url);
     });
@@ -203,50 +206,6 @@ function validarCPF(cpf) {
     }
     
 }
-        $('#navbar_when').daterangepicker({
-            "locale": {
-                "format": "DD/MM/YYYY",
-                "separator": " - ",
-                "applyLabel": "Aplicar",
-                "cancelLabel": "Cancelar",
-                "fromLabel": "From",
-                "toLabel": "To",
-                "customRangeLabel": "Custom",
-                "weekLabel": "W",
-                "daysOfWeek": [
-                    "dom",
-                    "seg",
-                    "terç",
-                    "qua",
-                    "qui",
-                    "sex",
-                    "Sáb"
-                ],
-                "monthNames": [
-                    "Janeiro",
-                    "Fevereiro",
-                    "Março",
-                    "Abril",
-                    "Maio",
-                    "Junho",
-                    "Julho",
-                    "Agosto",
-                    "Setembro",
-                    "Outubro",
-                    "Novembro",
-                    "Dezembro"
-                ],
-                "firstDay": 1
-            },
-            "startDate": "07/07/2022",
-            "endDate": "08/07/2022"
-        }, function(start, end, label) {
-            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format(
-                'YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-        });
-        function initAutocomplete() {
-            var address = document.getElementById('navbar_where');
-            var autocomplete = new google.maps.places.Autocomplete(address);
-        }
+        
 
 

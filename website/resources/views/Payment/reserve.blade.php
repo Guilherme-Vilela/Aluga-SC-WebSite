@@ -1,20 +1,21 @@
 @extends('Default.layout')
 @section('content')
-<noscript>
-    <iframe 
-      style="width: 100px; height: 100px; border: 0; position:absolute; top: -5000px;" 
-      src="https://h.online-metrix.net/fp/tags?org_id={1snn5n9w} &session_id={{"{".$seller_id."}"}}">
-    </iframe>
-  </noscript>
+    <noscript>
+        <iframe style="width: 100px; height: 100px; border: 0; position:absolute; top: -5000px;"
+            src="https://h.online-metrix.net/fp/tags?org_id={1snn5n9w} &session_id={{ '{' . $seller_id . '}' }}">
+        </iframe>
+    </noscript>
     <main class="container">
         <div class="row justify-content-center  align-content-center align-items-center" style="height: 90vh;">
             <div id="carousel" class="carousel slide col-sm-12 " data-ride="carousel" data-interval="false">
 
                 <form action="{{ route('payment.store') }}" method="POST" enctype="multipart/form-data" id="form_payment">
                     @csrf
-                    <input style = "display:none" type = "text" value = "{{$seller_id}}" name = "session">
-                    <input style = "display:none" type = "text" value = "{{$immobile->id}}" name = "immobile">
-                    <input style = "display:none" type = "text" value = "{{$amount}}" name = "amount">
+                    <input style="display:none" type="text" value="{{ $seller_id }}" name="session">
+                    <input style="display:none" type="text" value="{{ $immobile->id }}" name="immobile">
+                    <input style="display:none" type="text" value="{{ $amount }}" name="amount">
+                    <input style="display:none" type="text" value="{{ $check_in }}" name="check_in">
+                    <input style="display:none" type="text" value="{{ $check_out }}" name="check_out">
                     <div class="container" style="width: 90%;">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -141,6 +142,10 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                            <h5>Metodo de pagamento: Credito avista</h5>
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="num_cartao">Número</label>
                                             <input type="text" class="form-control" id="card_number"
                                                 name="card_number" value="" maxlength="16">
@@ -162,9 +167,9 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-6 row justify-content-center align-items-center">
-                                        <div class="col-sm-12">
-                                            <h4>Metodo de pagamento: Credito avista</h4>
-                                        </div>
+
+
+
                                         <div class="modelo-card-frente-example">
                                             <span class="ex-card-number"></span>
                                             <span class="ex-card-name"></span>
@@ -228,9 +233,7 @@
             $('#cpf').mask("000.000.000-00", {
                 reverse: true
             });
-            $('#cell').mask("(00)00000-00000", {
-                reverse: true
-            });
+            $('#cell').mask(" (00) 0 0000-0000", {});
 
             // FINISH MASK
             $.getJSON("{{ asset('js/cities/city.json') }}", function(data) {

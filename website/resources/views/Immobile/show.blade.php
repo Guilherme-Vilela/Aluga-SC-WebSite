@@ -253,6 +253,7 @@
             "startDate": "07/07/2022",
             "endDate": "08/07/2022"
         }, function(start, end, label) {});
+        
         $(document).ready(function() {
             checkdate();
             $("#date_check").click(function() {

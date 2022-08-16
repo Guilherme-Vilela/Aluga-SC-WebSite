@@ -11,6 +11,8 @@ class Furniture extends Model
     protected $fillable = [
         'name',
         'capacity',
+        'icon',
+        'status'
     ];
 
     public function roomFurniture(){return $this->hasMany(RoomFurniture::class);}

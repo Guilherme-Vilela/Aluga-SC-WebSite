@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,15 +20,24 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::namespace('\App\Http\Controllers')->group(function () {
-Route::get('/', 'ImmobileController@index')->name("home");
-Route::get('/atualizacao', 'UserController@update')->name("user_register_complete");
-Route::post('/login','UserController@login')->name("login");
-Route::get('/logout','UserController@logout')->name("logout");
-Route::post('/register','UserController@register')->name("register");
-Route::Resource('/imovel',"ImmobileController")->names("immobile")->parameters(['imovel'=>'immobile']);
-Route::Resource('/mobilia',"FurnitureController")->names("furtinure")->parameters(['mobilia'=>'furtinure']);
-Route::Resource('/pagamento',"PaymentController")->names("payment")->parameters(['pagamento'=>'payment']);
-Route::Resource('/comodo',"RoomController")->names("room")->parameters(['comodo'=>'room']);
-Route::Resource('/agenda',"ScheduleController")->names("schedule")->parameters(['agenda'=>'schedule']);
-Route::Resource('usuario',"UserController")->names("user")->parameters(['usuario'=>'user']);
- });
+
+    Route::get('/auth/google/redirect', 'SocialiteController@redirect')->name('login.google');
+    Route::get('/auth/google/callback', 'SocialiteController@callback')->name('callback');
+
+    Route::get('/', 'ImmobileController@index')->name("home");
+
+    Route::post('/login', 'UserController@login')->name("login");
+    Route::get('/logout', 'UserController@logout')->name("logout");
+    Route::get('/user/imoveis', 'ImmobileController@myimmobile')->middleware('auth')->name("immobile.my");
+    Route::get('/imovel/cadastro', "ImmobileController@create")->middleware('auth')->name("immobile.create");
+    Route::Resource('/imovel', "ImmobileController", ['except' => ['create', 'update']])->names("immobile")->parameters(['imovel' => 'immobile']);
+
+    Route::get('/atualizacao_cadastro', 'UserController@update')->middleware('auth')->name("user.update");
+    Route::get('/usuario', 'UserController@index')->middleware('auth')->name("user.index");
+    // Route::Resource('/mobilia',"FurnitureController")->names("furtinure")->parameters(['mobilia'=>'furtinure']);
+    // Route::Resource('/pagamento',"PaymentController")->names("payment")->parameters(['pagamento'=>'payment']);
+    // Route::Resource('/comodo',"RoomController")->names("room")->parameters(['comodo'=>'room']);
+    // Route::Resource('/agenda',"ScheduleController")->names("schedule")->parameters(['agenda'=>'schedule']);
+
+    Route::Resource('/usuario', "UserController", ['except' => ['update', 'index']])->names("user")->parameters(['usuario' => 'user']);
+});

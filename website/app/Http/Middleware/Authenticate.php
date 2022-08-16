@@ -15,7 +15,8 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return route('login');
+            session()->put(['mensage' =>['title'=>'Faça login para poder cadastrar o seu imovel','text'=> "", 'icon' => "info", 'function' => "login"]]);
+            return Route("home");
         }
     }
 }

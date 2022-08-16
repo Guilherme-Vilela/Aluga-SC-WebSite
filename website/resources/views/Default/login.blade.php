@@ -11,7 +11,8 @@
 
             <div class="modal-body">
                 <div class="container">
-                    <h6 class="text-center h5">Bem-vindo!</h6>
+                    <h6 class="text-center h5" >Bem-vindo!</h6>
+                    <h6 class="text-center h5 "id = "mensage_login" ></h6>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group row col-sm-12 ">
@@ -32,6 +33,9 @@
                             <div class="col-sm-12 d-flex justify-content-center">
                                 <button type="submit" class="btn btn-dark btn_login">Entrar</button>
                             </div>
+                            <div class=" button_login_google col-sm-12 d-flex justify-content-center mt-3   "> 
+                                <a href="{{route("login.google")}}" class="col-sm-9"> <img src = "{{asset('images/login_google.png')}}"></a>
+                            </div>
                             <div class="col-sm-10 mt-5">
                                 <a id="btn_login_register" class="txt-center ls-login-signup"
                                     style="cursor: pointer;">Não possui cadastro? <b>Cadastre-se
@@ -45,3 +49,8 @@
         <div class="modal-footer"></div>
     </div>
 </div>
+<script>
+$('#modal_login').on('hidden.bs.modal', function (e) {
+  $("#mensage_login").text("");
+})
+</script>

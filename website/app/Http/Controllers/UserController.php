@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        $user = User::find(auth()->user()->id);
+        return view('User/register_complete',['user'=>$user]);
+    }
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -17,10 +23,11 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            session()->put(['mensage' =>['title'=>'Bem vindo '.auth()->user()->name,'text'=> "", 'icon' => "sucess", "function" => "alert"]]);
             return redirect()->route('home');
         }
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'email' => 'Email ou senha invalidos',
         ])->onlyInput('email');
     }
 
@@ -37,10 +44,11 @@ class UserController extends Controller
         ]);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            session()->put(['mensage' =>['title'=>'Cadastro realizado com sucesso  ','text'=> "  Bem vindo  ".auth()->user()->name, 'icon' => "success","function" => "alert"]]);
             return redirect()->route('home');
         }
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'mensage' => 'Email ou senha invalidos',
         ])->onlyInput('email');
     }
 
@@ -51,6 +59,6 @@ class UserController extends Controller
     }
     public function update()
     {
-        return view('User/register_complete');
+       
     }
 }

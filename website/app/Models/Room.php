@@ -10,6 +10,8 @@ class Room extends Model
     use HasFactory;
     protected $fillable = [
         'name',
+        'icon',
+        'status',
     ];
     public function roomFurniture()
     {

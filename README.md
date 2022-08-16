@@ -26,7 +26,7 @@ obs: caso não tenha conta no google admin, apenas a funcionalidade de login via
 
 A imagem acima mostra as configurações do ambiente laravel, não é nescessario alteração
 
-![image](https://user-images.githubusercontent.com/68655658/184996930-d671f7da-f20f-4f77-8b60-0cbc702655a0.png)
+![image](https://user-images.githubusercontent.com/68655658/184997774-398e9586-3fe4-4bf6-9190-362880a5f6b6.png)
 
 A imagem acima demonstra as configurações do servidor SMTP (Serviço de envio de email), altero para as configurações do seu provedor
 

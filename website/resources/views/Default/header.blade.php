@@ -32,21 +32,6 @@
                             <div class="d-flex images_dropdown_where">
 
                                 <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure class="image_where" data-target="Litoral Catarinense">
-                                        <img src="{{ asset('images/header/imagem_01.jpg') }}" class="img-thumbnail"
-                                            alt="">
-                                        <figcaption class="text-center">Litoral Catarinese</figcaption>
-                                    </figure>
-                                </div>
-
-                                <div class="col-12 col-xl-6 d-block dropdown-item">
-                                    <figure class="image_where" data-target="Vale do itajai">
-                                        <img src="{{ asset('images/header/imagem_02.jpg') }}" class="img-thumbnail"
-                                            alt="">
-                                        <figcaption class="text-center">Vaje do itajai</figcaption>
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-xl-6 d-block dropdown-item">
                                     <figure class="image_where" data-target="Rio dos cedros">
                                         <img src="{{ asset('images/header/imagem_03.jpg') }}" class="img-thumbnail"
                                             alt="">
@@ -64,7 +49,7 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown  nav-item">
-                        <input type="text" name="daterange" value="12/07/2022 - 12/07/2022"
+                        <input type="text" name="daterange" value=""
                             class="nav-link dropdown-toggle border_radius button_header size_animate" href="#"
                             id="navbar_when" role="button" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false" placeholder=" Quando?" />
@@ -168,7 +153,54 @@
                 })
             })
         </script>
-        {{ session()->forget('mensage') }}
+        
     @endif
-
+        {{ session()->forget('mensage') }}
+        <script>
+            $('#navbar_when').daterangepicker({
+            "locale": {
+                "format": "DD/MM/YYYY",
+                "separator": " - ",
+                "applyLabel": "Aplicar",
+                "cancelLabel": "Cancelar",
+                "fromLabel": "From",
+                "toLabel": "To",
+                "customRangeLabel": "Custom",
+                "weekLabel": "W",
+                "daysOfWeek": [
+                    "dom",
+                    "seg",
+                    "terç",
+                    "qua",
+                    "qui",
+                    "sex",
+                    "Sáb"
+                ],
+                "monthNames": [
+                    "Janeiro",
+                    "Fevereiro",
+                    "Março",
+                    "Abril",
+                    "Maio",
+                    "Junho",
+                    "Julho",
+                    "Agosto",
+                    "Setembro",
+                    "Outubro",
+                    "Novembro",
+                    "Dezembro"
+                ],
+                "firstDay": 1
+            },
+            "startDate": "19/07/2022",
+            "endDate": "20/07/2022"
+        }, function(start, end, label) {
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format(
+                'YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+        });
+        function initAutocomplete() {
+            var address = document.getElementById('navbar_where');
+            var autocomplete = new google.maps.places.Autocomplete(address);
+        }
+        </script>
 </header>

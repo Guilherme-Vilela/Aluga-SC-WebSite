@@ -13,12 +13,10 @@ class SocialiteController extends Controller
     }
     public function callback(Request $request)
     {
-        
         $user_data = Socialite::driver('google')->stateless()->user();
 
         $user = User::where('email',$user_data->email)->first();
         if(empty($user->email)){
-            var_dump("entrei aqui");
             $user = new User();
             $user->name = $user_data->name;
             $user->password = bcrypt($user_data->id);

@@ -15,8 +15,8 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            session()->put(['mensage' =>['title'=>'Faça login para poder cadastrar o seu imovel','text'=> "", 'icon' => "info", 'function' => "login"]]);
-            return Route("home");
+            session()->put(['mensage' =>['title'=>'Faça login para poder utilizar essa função','text'=> "", 'icon' => "info", 'function' => "login"]]);
+            return  url()->previous();
         }
     }
 }

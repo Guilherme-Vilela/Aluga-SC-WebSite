@@ -24,7 +24,7 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             session()->put(['mensage' =>['title'=>'Bem vindo '.auth()->user()->name,'text'=> "", 'icon' => "sucess", "function" => "alert"]]);
-            return redirect()->route('home');
+            return back();
         }
         return back()->withErrors([
             'email' => 'Email ou senha invalidos',
@@ -45,7 +45,7 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             session()->put(['mensage' =>['title'=>'Cadastro realizado com sucesso  ','text'=> "  Bem vindo  ".auth()->user()->name, 'icon' => "success","function" => "alert"]]);
-            return redirect()->route('home');
+            return back();
         }
         return back()->withErrors([
             'mensage' => 'Email ou senha invalidos',
